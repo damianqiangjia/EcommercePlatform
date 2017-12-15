@@ -393,7 +393,7 @@ let router = new Router({
                 {
                     routerID: '8-2',
                     path: '/user',
-                    component: Home,
+                    component: subView,
                     name: '密码',
                     menuShow: true,
                     iconCls: 'iconfont icon-tree', // 图标样式class

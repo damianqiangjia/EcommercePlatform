@@ -6,7 +6,7 @@
         <el-breadcrumb-item :to="{ path: '/' }"><b>首页</b></el-breadcrumb-item>
         <el-breadcrumb-item>商品信息</el-breadcrumb-item>
         <el-breadcrumb-item>保健品</el-breadcrumb-item>
-        <el-breadcrumb-item>爱普泰</el-breadcrumb-item>
+        <el-breadcrumb-item>莎露斯</el-breadcrumb-item>
       </el-breadcrumb>
     </el-col>
   </el-row>
@@ -223,7 +223,7 @@ import axios from 'axios'
                   console.log(res) 
                   let res1 = res.data.healthcare
                   var arr=res1.list.filter(function(ele){
-                    return ele.brand.includes("Abtei/爱普泰")
+                    return ele.brand.includes("Salus")
                   })
                   console.log(arr)
                 this.tableData = arr

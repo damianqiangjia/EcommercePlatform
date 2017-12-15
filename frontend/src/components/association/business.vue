@@ -12,24 +12,14 @@
       <el-tabs type="border-card" >
         <el-tab-pane label="商品-电商关联分析" class="chart-card">
           <div id="chartProduct" style="width:1100px; height:550px;"></div>      
-          <el-button type="text" size="medium" style="float: center">添加到简报</el-button>
+          <el-button id = "chartProductExport" type="text" size="medium" style="float: center">添加到简报</el-button>
         </el-tab-pane>
         <el-tab-pane label="电商-商品关联分析" class="chart-card">
           <div id="chartBusiness" style="width:1100px; height:550px;"></div>        
-          <el-button type="text" size="medium" style="float: center">添加到简报</el-button>
+          <el-button  id = "chartBusinessExport" type="text" size="medium" style="float: center">添加到简报</el-button>
         </el-tab-pane>
       </el-tabs>
     </el-col>
-
-          <!-- <el-col :span="24">
-            <div id="chartProduct" style="width:85%; height:600px;"></div>
-            <el-button size="mini" style="float: center">添加到简报</el-button>
-          </el-col>
-
-          <el-col :span="24">
-            <div id="chartBusiness" style="width:85%; height:600px;"></div>
-            <el-button size="mini" style="float: center">添加到简报</el-button>
-          </el-col> -->
 
     <h3 class="excursus">附件：(电商对应ID)</h3>
     <el-table :data="tableData" border style="width: 50%" class="brand-table">
@@ -43,6 +33,8 @@
 <script>
   import echarts from 'echarts'
   import axios from 'axios'
+  import {bus} from '../../bus.js'
+  import html2Canvas from '../../html2canvas.js'
 
   export default{
 
@@ -275,7 +267,21 @@
         .catch(() => {
           console.log("error")
         })
+
+        //添加至报表
+        var exportIf = document.getElementById('chartProductExport')
+        exportIf.onclick = function(){
+          var imgURL = _this.chartProduct.getDataURL()
+          console.log(imgURL)
+          // localStorage.clear()
+          localStorage.setItem("chartProduct",imgURL)
+          localStorage.setItem("chartProductName","商品-电商关联分析报表")
+
+          alert("已经添加至简报，后续操作请至简报管理页面编辑")
+        }
       },
+      
+
       drawBusiness(){
         let _this= this;
         //基于准备好的dom，初始化echarts实例
@@ -481,6 +487,17 @@
         .catch(() => {
           console.log("error")
         })
+
+        //添加至报表
+        var exportIf = document.getElementById('chartBusinessExport')
+        exportIf.onclick = function(){
+          var imgURL = _this.chartBusiness.getDataURL()
+          console.log(imgURL)
+          // localStorage.clear()
+          localStorage.setItem("chartBusiness",imgURL)
+          localStorage.setItem("chartBusinessName","电商-商品关联分析报表")
+          alert("已经添加至简报，后续操作请至简报管理页面编辑")
+        }
 
       },
 
