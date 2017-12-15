@@ -1,0 +1,41 @@
+{
+	"list": 
+	[
+		{"productID":"30001","productname":"德国facelle 日用超薄护翼卫生巾 3滴","brand":"Facelle","class":"日常用品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"15"},
+		{"productID":"30002","productname":"德国facelle 日用护翼卫生巾 加长 4滴","brand":"Facelle","class":"日常用品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"15"},
+		{"productID":"30003","productname":"德国facelle 日用护翼卫生巾 芦荟型 3滴","brand":"Facelle","class":"日常用品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"15"},
+		{"productID":"30004","productname":"德国facelle 日用护翼卫生巾 清新花香型 3滴","brand":"Facelle","class":"日常用品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"15"},
+		{"productID":"30005","productname":"德国facelle 日用卫生巾 2滴 普通型","brand":"Facelle","class":"日常用品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"15"},
+		{"productID":"30006","productname":"德国facelle 夜用护翼卫生巾 5滴","brand":"Facelle","class":"日常用品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"15"},
+		{"productID":"30007","productname":"德国facelle 卫生护垫","brand":"Facelle","class":"日常用品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"15"},
+		{"productID":"30008","productname":"德国Jessa 蚕丝超薄护翼卫生巾 4滴","brand":"Jessa","class":"日常用品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"18"},
+		{"productID":"30009","productname":"德国Jessa 超薄护垫独立包装 1滴","brand":"Jessa","class":"日常用品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"18"},
+		{"productID":"30010","productname":"德国Jessa 超薄护翼卫生巾 5滴","brand":"Jessa","class":"日常用品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"18"},
+		{"productID":"30011","productname":"德国Jessa 超薄护翼夜用卫生巾 6滴","brand":"Jessa","class":"日常用品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"18"},
+		{"productID":"30012","productname":"德国Jessa 芦荟超薄护翼卫生巾 4滴","brand":"Jessa","class":"日常用品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"18"},
+		{"productID":"31001","productname":"德国Dontodent 草莓味婴幼儿乳牙牙膏 含氟","brand":"Dontodent","class":"日常用品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"25"},
+		{"productID":"31002","productname":"德国Dontodent 成人牙膏 抗敏脱敏型","brand":"Dontodent","class":"日常用品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"25"},
+		{"productID":"31003","productname":"德国汉高泰瑞美Theramed 按压立式牙膏 防蛀固齿","brand":"Theramed","class":"日常用品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"39"},
+		{"productID":"31004","productname":"德国汉高泰瑞美Theramed 按压立式牙膏 深层清洁","brand":"Theramed","class":"日常用品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"39"},
+		{"productID":"31005","productname":"德国汉高泰瑞美Theramed 按压立式牙膏 自然美白","brand":"Theramed","class":"日常用品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"39"},
+		{"productID":"31006","productname":"德国Elmex 儿童可吞咽牙膏 1-6岁","brand":"Elmex","class":"日常用品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"20"},
+		{"productID":"31007","productname":"德国Elmex 儿童牙膏","brand":"Elmex","class":"日常用品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"20"},
+		{"productID":"31008","productname":"德国Elmex 专业防龋齿成人牙膏","brand":"Elmex","class":"日常用品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"20"},
+		{"productID":"31009","productname":"德国Elmex成人专业修复龋齿牙膏","brand":"Elmex","class":"日常用品","addr":"德国","addrID":"C01","business":"河南航商科技有限公司","businessID":"B01","price":"20"},
+		{"productID":"32001","productname":"德国GUHL 白茶薄荷水抗头皮敏感洗发水","brand":"GUHL","class":"日常用品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"50"},
+		{"productID":"32002","productname":"德国GUHL 皇家兰花精华丝滑柔亮浓缩洗发水","brand":"GUHL","class":"日常用品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"98"},
+		{"productID":"32003","productname":"德国GUHL 蓝莲花长效丰发浓缩洗发水","brand":"GUHL","class":"日常用品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"98"},
+		{"productID":"32004","productname":"德国GUHL 啤酒强韧柔顺秀发浓缩洗发水","brand":"GUHL","class":"日常用品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"98"},
+		{"productID":"32005","productname":"德国GUHL 栀子花杏仁油深层滋养修复护发素","brand":"GUHL","class":"日常用品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"98"},
+		{"productID":"32006","productname":"德国GUHL天然有机温泉柠檬薄荷抗油洗发水","brand":"GUHL","class":"日常用品","addr":"德国","addrID":"C01","business":"河南航商科技有限公司","businessID":"B01","price":"98"},
+		{"productID":"32007","productname":"德国施华蔻Schwarzkopf Gliss Kur19种营养成分全面修护护发素","brand":"施华蔻","class":"日常用品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"109"},
+		{"productID":"32008","productname":"德国施华蔻Schwarzkopf Gliss Kur丝蛋白滋润顺滑洗发水","brand":"施华蔻","class":"日常用品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"89"},
+		{"productID":"32009","productname":"德国施华蔻Schwarzkopf Gliss Kur系列护发油","brand":"施华蔻","class":"日常用品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"79"},
+		{"productID":"32010","productname":"德国施华蔻Schauma 男士咖啡因控油防脱洗发水","brand":"施华蔻","class":"日常用品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"89"},
+		{"productID":"32014","productname":"德国施巴Sebamed 成人活力泡泡浴沐浴露","brand":"Sebamed","class":"日常用品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"78"},
+		{"productID":"32015","productname":"德国施巴Sebamed 成人活力清新醒肤沐浴露","brand":"Sebamed","class":"日常用品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"78"},
+		{"productID":"32016","productname":"德国施巴Sebamed 成人健康沐浴露","brand":"Sebamed","class":"日常用品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"78"},
+        {"productID":"32017","productname":"德国施巴Sebamed 女性私处护理洗液pH3.8","brand":"Sebamed","class":"日常用品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"69"}
+		]
+	
+}

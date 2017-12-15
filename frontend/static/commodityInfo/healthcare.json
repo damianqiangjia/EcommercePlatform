@@ -1,0 +1,25 @@
+{
+	"list": 
+	[
+		{"productID":"50001","productname":"德国Abtei Artischocke朝鲜蓟保肝胶囊","brand":"Abtei/爱普泰","class":"保健品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"85"},
+		{"productID":"50002","productname":"德国Abtei 朝鲜蓟维生素E保肝降胆固醇胶囊","brand":"Abtei/爱普泰","class":"保健品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"85"},
+		{"productID":"50003","productname":"德国Abtei 骨维力素","brand":"Abtei/爱普泰","class":"保健品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"85"},
+		{"productID":"50004","productname":"德国Altapharma 多种维生素+矿物质泡腾片芒果味","brand":"Altapharma","class":"保健品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"10"},
+		{"productID":"50005","productname":"德国Altapharma 多种维生素泡腾片鲜橙味","brand":"Altapharma","class":"保健品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"10"},
+		{"productID":"50006","productname":"德国Altapharma 钙+维他命D3片 预防骨质疏松","brand":"Altapharma","class":"保健品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"100"},
+		{"productID":"50007","productname":"德国DAS gesunde PLUS 多种矿物质泡腾片","brand":"Das gesunde Plus","class":"保健品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"21"},
+		{"productID":"50008","productname":"德国DAS gesunde PLUS 儿童复合维生素小熊软糖水果味","brand":"Das gesunde Plus","class":"保健品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"35"},
+		{"productID":"50009","productname":"德国DAS gesunde PLUS 儿童维生素D3咀嚼片","brand":"Das gesunde Plus","class":"保健品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"35"},
+		{"productID":"50010","productname":"德国Femibion 孕妇叶酸1阶段维生素D3+800µg叶酸","brand":"Femibion","class":"保健品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"269"},
+		{"productID":"50011","productname":"德国Femibion 孕妇叶酸2阶段维生素D3+DHA+400µg叶酸","brand":"Femibion","class":"保健品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"269"},
+		{"productID":"50012","productname":"法国La Tourangelle拉杜蓝乔牛油果油","brand":"La Tourangelle","class":"保健品","addr":"法国","addrID":"C02","business":"上海欧鸽供应链管理有限公司","businessID":"B03","price":"198"},
+		{"productID":"50013","productname":"法国La Tourangelle拉杜蓝乔葡萄籽油","brand":"La Tourangelle","class":"保健品","addr":"法国","addrID":"C02","business":"上海欧鸽供应链管理有限公司","businessID":"B03","price":"168"},
+		{"productID":"50014","productname":"法国La Tourangelle拉杜蓝乔核桃油","brand":"La Tourangelle","class":"保健品","addr":"法国","addrID":"C02","business":"上海欧鸽供应链管理有限公司","businessID":"B03","price":"198"},
+		{"productID":"50015","productname":"德国莎露斯Salus Floradix铁元药装版（绿铁）","brand":"Salus","class":"保健品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"78"},
+		{"productID":"50016","productname":"德国莎露斯Salus Floradix铁元（红铁）","brand":"Salus","class":"保健品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"130"},
+		{"productID":"50017","productname":"德国双心Doppelherz 多维护眼胶囊","brand":"Doppel Herz/双心 ","class":"保健品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"64"},
+		{"productID":"50018","productname":"德国双心牌Doppelherz大蒜精胶囊","brand":"Doppel Herz/双心 ","class":"保健品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"100"},
+		{"productID":"50019","productname":"德国双心Doppelherz 辅酶Q10+维生素B软胶囊","brand":"Doppel Herz/双心 ","class":"保健品","addr":"德国","addrID":"C01","business":"福建速达电子商务有限责任公司","businessID":"B02","price":"69"}
+		]
+	
+}

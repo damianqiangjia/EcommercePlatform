@@ -1,0 +1,67 @@
+body {
+  padding: 0px;
+  margin: 0px auto; //指定外边距 auto：浏览器计算外边距
+}
+
+a {
+  text-decoration: none; //文本修饰：none
+}
+
+dd {
+  width:100%;
+  word-break:keep-all;/* 不换行 */
+  white-space:nowrap;/* 不换行 */
+  overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+  text-overflow:ellipsis;/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+}
+
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased; /*chrome、safari*/    //对字体进行抗锯齿渲染
+  -moz-osx-font-smoothing: grayscale; /*firefox*/   //对字体进行抗锯齿渲染
+  text-align: left;  //规定文本的水平对齐方式。
+  color: #2c3e50;
+}
+
+//home.vue
+.el-menu-item, .el-submenu__title {
+  color: #fff;
+}
+
+.el-menu .el-menu-item, .el-submenu .el-submenu__title {
+  height: 46px;
+  line-height: 46px;
+}
+  // 鼠标移动到该区域时，改变该区域的背景颜色
+.el-menu-item:hover,  .el-submenu__title:hover {
+  background-color: #788799;
+}
+
+  // 折叠区域的背景颜色
+  .el-menu-item-group .el-submenu, .el-menu-item-group .el-submenu .el-menu-item , 
+  .el-submenu .el-menu-item , .el-menu-item-group {
+  background-color: #333744
+}
+
+  //鼠标移动到折叠区域时，改变其背景颜色
+  .el-menu-item-group .el-submenu:hover, .el-menu-item-group .el-submenu .el-menu-item:hover ,
+  .el-submenu .el-menu-item:hover {
+  background-color: #788799
+}
+
+  //处于某个页面下时，改变该页面的目录所在区域的颜色
+.el-submenu .el-menu-item.is-active, .el-menu-item.is-active,
+.el-submenu .el-menu-item.is-active:hover, .el-menu-item.is-active:hover {
+  background-color: #53537a;
+  color: #fff;
+}
+  // icon设置
+.el-menu .iconfont {
+  vertical-align: baseline;
+  margin-right: 6px;
+}
+
+//breadcrumb面包屑 首页/商品属性/......
+.warp-breadcrum{
+  margin: 5px 10px 15px 0px;
+}
