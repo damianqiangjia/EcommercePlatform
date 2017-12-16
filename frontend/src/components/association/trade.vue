@@ -10,34 +10,34 @@
 
     <el-col :span="24" class="chart-container">
       <div id="chartSales" style="width:85%; height:600px;"></div>
-      <el-button type="text" size="medium" style="float: center">添加到简报</el-button>
+      <el-button id="chartSalesExport" type="text" size="medium" style="float: center">添加到简报</el-button>
     </el-col>
 
     <el-col :span="24" class="chart-classfily">
       <el-tabs type="border-card" >
         <el-tab-pane label="母婴用品">
           <div id="chartbabyProduct" style="width:1100px; height:550px;"></div>          
-          <el-button type="text" size="medium" style="float: center">添加到简报</el-button>
+          <el-button id="chartbabyProductExport" type="text" size="medium" style="float: center">添加到简报</el-button>
         </el-tab-pane>
         <el-tab-pane label="奶粉">
           <div id="chartMilk" style="width:1100px; height:550px;"></div>
-          <el-button type="text" size="medium" style="float: center">添加到简报</el-button>
+          <el-button id="chartMilkExport" type="text" size="medium" style="float: center">添加到简报</el-button>
         </el-tab-pane>
         <el-tab-pane label="日常用品">
           <div id="chartDaily" style="width:1100px; height:550px;"></div>
-          <el-button type="text" size="medium" style="float: center">添加到简报</el-button>
+          <el-button id="chartDailyExport" type="text" size="medium" style="float: center">添加到简报</el-button>
         </el-tab-pane>
         <el-tab-pane label="护肤品">
           <div id="chartSkin" style="width:1100px; height:550px;"></div>
-          <el-button type="text" size="medium" style="float: center">添加到简报</el-button>
+          <el-button id="chartSkinExport" type="text" size="medium" style="float: center">添加到简报</el-button>
         </el-tab-pane>
         <el-tab-pane label="食品">
           <div id="chartFood" style="width:1100px; height:550px;"></div>
-          <el-button type="text" size="medium" style="float: center">添加到简报</el-button>
+          <el-button id="chartFoodExport" type="text" size="medium" style="float: center">添加到简报</el-button>
         </el-tab-pane>
         <el-tab-pane label="保健品">
           <div id="chartHealth" style="width:1100px; height:550px;"></div>
-          <el-button type="text" size="medium" style="float: center">添加到简报</el-button>
+          <el-button id="chartHealthExport" type="text" size="medium" style="float: center">添加到简报</el-button>
         </el-tab-pane>
       </el-tabs>
     </el-col>
@@ -136,6 +136,17 @@ import axios from 'axios'
         .catch(() => {
           console.log("error")
         })
+
+        //添加至简报
+        var exportIf = document.getElementById('chartSalesExport')
+        exportIf.onclick = function(){
+          var imgURL = _this.chartSales.getDataURL()
+          console.log(imgURL)
+          localStorage.setItem("chartSales",imgURL)
+          localStorage.setItem("chartSalesName","销量关联分析报表")
+
+          alert("已经添加至简报，后续操作请至简报管理页面编辑")
+        }
       },
       drawbabyProduct() {
         let _this = this;
@@ -206,6 +217,17 @@ import axios from 'axios'
         .catch(() => {
           console.log("error")
         })
+
+        //添加至简报
+        var exportIf = document.getElementById('chartbabyProductExport')
+        exportIf.onclick = function(){
+          var imgURL = _this.chartbabyProduct.getDataURL()
+          console.log(imgURL)
+          localStorage.setItem("chartbabyProduct",imgURL)
+          localStorage.setItem("chartbabyProductName","销量关联分析-母婴用品报表")
+
+          alert("已经添加至简报，后续操作请至简报管理页面编辑")
+        }
       },
       drawMilk() {
         let _this = this;
@@ -276,6 +298,17 @@ import axios from 'axios'
         .catch(() => {
           console.log("error")
         })
+
+        //添加至简报
+        var exportIf = document.getElementById('chartMilkExport')
+        exportIf.onclick = function(){
+          var imgURL = _this.chartMilk.getDataURL()
+          console.log(imgURL)
+          localStorage.setItem("chartMilk",imgURL)
+          localStorage.setItem("chartMilkName","销量关联分析-奶粉报表")
+
+          alert("已经添加至简报，后续操作请至简报管理页面编辑")
+        }
       },
       drawDaily() {
         let _this = this;
@@ -346,6 +379,17 @@ import axios from 'axios'
         .catch(() => {
           console.log("error")
         })
+
+        //添加至简报
+        var exportIf = document.getElementById('chartDailyExport')
+        exportIf.onclick = function(){
+          var imgURL = _this.chartDaily.getDataURL()
+          console.log(imgURL)
+          localStorage.setItem("chartDaily",imgURL)
+          localStorage.setItem("chartDailyName","销量关联分析-日常用品报表")
+
+          alert("已经添加至简报，后续操作请至简报管理页面编辑")
+        }
       },
       drawSkin() {
         let _this = this;
@@ -416,6 +460,17 @@ import axios from 'axios'
         .catch(() => {
           console.log("error")
         })
+
+        //添加至简报
+        var exportIf = document.getElementById('chartSkinExport')
+        exportIf.onclick = function(){
+          var imgURL = _this.chartSkin.getDataURL()
+          console.log(imgURL)
+          localStorage.setItem("chartSkin",imgURL)
+          localStorage.setItem("chartSkinName","销量关联分析-护肤品报表")
+
+          alert("已经添加至简报，后续操作请至简报管理页面编辑")
+        }
       },
       drawFood() {
         let _this = this;
@@ -486,6 +541,17 @@ import axios from 'axios'
         .catch(() => {
           console.log("error")
         })
+
+        //添加至简报
+        var exportIf = document.getElementById('chartFoodExport')
+        exportIf.onclick = function(){
+          var imgURL = _this.chartFood.getDataURL()
+          console.log(imgURL)
+          localStorage.setItem("chartFood",imgURL)
+          localStorage.setItem("chartFoodName","销量关联分析-食品报表")
+
+          alert("已经添加至简报，后续操作请至简报管理页面编辑")
+        }
       },
       drawHealth() {
         let _this = this;
@@ -556,6 +622,17 @@ import axios from 'axios'
         .catch(() => {
           console.log("error")
         })
+
+        //添加至简报
+        var exportIf = document.getElementById('chartHealthExport')
+        exportIf.onclick = function(){
+          var imgURL = _this.chartHealth.getDataURL()
+          console.log(imgURL)
+          localStorage.setItem("chartHealth",imgURL)
+          localStorage.setItem("chartHealthName","销量关联分析-保健品报表")
+
+          alert("已经添加至简报，后续操作请至简报管理页面编辑")
+        }
       }
     },
     mounted() {

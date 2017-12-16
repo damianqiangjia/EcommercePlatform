@@ -85,7 +85,8 @@
   <el-row class="warp">
         <el-col>
           <div class="chart-container">
-          <div id = "one" style="width: 100%; height: 500px;"> </div>
+          <div id = "babybioInfo" style="width: 100%; height: 500px;"> </div>
+          <el-button id="babybioInfoExport" type="text" size="medium" style="float: center">添加到简报</el-button>
           </div>
         </el-col>
     </el-row>
@@ -140,9 +141,10 @@ import axios from 'axios'
       },
     methods: {
       draw(){
-            var one = echarts.init(document.getElementById('one'));
+          let _this = this
+            this.babybioInfo = echarts.init(document.getElementById('babybioInfo'));
               // 绘制图表
-              one.setOption
+              this.babybioInfo.setOption
               ({
                  title : {
         text: '伴宝乐 在淘宝平台销量变化及预测',
@@ -215,6 +217,17 @@ import axios from 'axios'
         }
     ]
   })
+
+            //添加至简报
+            var exportIf = document.getElementById('babybioInfoExport')
+            exportIf.onclick = function(){
+                var imgURL = _this.babybioInfo.getDataURL()
+                console.log(imgURL)
+                localStorage.setItem("babybioInfo",imgURL)
+                localStorage.setItem("babybioInfoName","伴宝乐食品 在淘宝平台销量变化及预测报表")
+
+                alert("已经添加至简报，后续操作请至简报管理页面编辑")
+            }
             },
             getData(){
                 console.log("===getData====")

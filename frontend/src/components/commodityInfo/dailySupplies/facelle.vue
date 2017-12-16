@@ -81,10 +81,11 @@
       </el-card>
     </el-col>
   </el-row>
-<el-row class="warp">
+    <el-row class="warp">
         <el-col>
           <div class="chart-container">
-          <div id = "one" style="width: 100%; height: 500px;"> </div>
+          <div id = "facelleInfo" style="width: 100%; height: 500px;"></div>
+          <el-button id="facelleInfoExport" type="text" size="medium" style="float: center">添加到简报</el-button>
           </div>
         </el-col>
     </el-row>
@@ -139,9 +140,10 @@ import axios from 'axios'
       },
     methods: {
       draw(){
-            var one = echarts.init(document.getElementById('one'));
+          let _this = this
+            this.facelleInfo = echarts.init(document.getElementById('facelleInfo'));
               // 绘制图表
-              one.setOption
+              this.facelleInfo.setOption
               ({
                  title : {
         text: 'Facelle 在淘宝平台销量变化及预测',
@@ -216,6 +218,17 @@ import axios from 'axios'
         }
     ]
   })
+
+            //添加至简报
+            var exportIf = document.getElementById('facelleInfoExport')
+            exportIf.onclick = function(){
+                var imgURL = _this.facelleInfo.getDataURL()
+                console.log(imgURL)
+                localStorage.setItem("facelleInfo",imgURL)
+                localStorage.setItem("facelleInfoName","facelle 在淘宝平台销量变化及预测报表")
+
+                alert("已经添加至简报，后续操作请至简报管理页面编辑")
+            }
             },
             getData(){
                 console.log("===getData====")

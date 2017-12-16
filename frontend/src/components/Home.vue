@@ -59,7 +59,7 @@
                 <span slot="title">{{item.name}}</span>
               </template>
               <!-- 子目录-->
-              <el-menu-item-group v-for="(term,index) in item.children" v-if="term.menuShow" :key="term.path">
+              <el-menu-item-group v-for="(term,index) in item.children" v-if="term.menuShow" :key="term.routerID">
                 <el-submenu  v-if="!term.leaf" :index="term.routerID">
                   <template slot="title">
                     <i :class="item.iconCls"></i>

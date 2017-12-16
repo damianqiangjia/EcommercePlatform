@@ -13,7 +13,7 @@
         <div class="grid-content bg-purple">
           <div class="chart-container">
             <div>
-                <el-button size="medium" type="success">导出简报</el-button>
+                <el-button id="forecastExport" size="medium" type="success">导出简报</el-button>
                 <el-button size="medium" type="primary"  v-on:click="export2ExcelOrder">导出excel</el-button>
             </div>
             <div id = "order" style="width: 1800px; height: 800px;"> </div>
@@ -28,7 +28,7 @@
             <el-tab-pane label="奶粉" name="first">
               <div class="chart-container">
                 <div>
-                    <el-button size="medium" type="success">导出简报</el-button>
+                    <el-button id="milkForecast" ize="medium" type="success">导出简报</el-button>
                     <el-button size="medium" type="primary"  v-on:click="export2ExcelNaifen">导出excel</el-button>
                 </div>
                 <div id = "naifen" style="width: 1800px; height: 800px;"> </div>
@@ -37,7 +37,7 @@
             <el-tab-pane label="母婴用品" name="second">
               <div class="chart-container">
                 <div>
-                    <el-button size="medium" type="success">导出简报</el-button>
+                    <el-button id="babyProductForecast" size="medium" type="success">导出简报</el-button>
                     <el-button size="medium" type="primary"  v-on:click="export2ExcelMuying">导出excel</el-button>
                 </div>
                 <div id = "muyingyongpin" style="width: 1800px; height: 800px;"> </div>
@@ -46,7 +46,7 @@
             <el-tab-pane label="护肤品" name="third">
               <div class="chart-container">
                 <div>
-                    <el-button size="medium" type="success">导出简报</el-button>
+                    <el-button id="skinForecast" size="medium" type="success">导出简报</el-button>
                     <el-button size="medium" type="primary"  v-on:click="export2ExcelHufu">导出excel</el-button>
                 </div>
                 <div id = "hufupin" style="width: 1800px; height: 800px;"> </div>
@@ -55,7 +55,7 @@
             <el-tab-pane label="食品" name="fourth">
               <div class="chart-container">
                 <div>
-                    <el-button size="medium" type="success">导出简报</el-button>
+                    <el-button id="foodForecast" size="medium" type="success">导出简报</el-button>
                     <el-button size="medium" type="primary"  v-on:click="export2ExcelShipin">导出excel</el-button>
                 </div>
                 <div id = "shipin" style="width: 1800px; height: 800px;"> </div>
@@ -64,7 +64,7 @@
             <el-tab-pane label="日常用品" name="fifth">
               <div class="chart-container">
                 <div>
-                    <el-button size="medium" type="success">导出简报</el-button>
+                    <el-button id="dailyForecast" size="medium" type="success">导出简报</el-button>
                     <el-button size="medium" type="primary"  v-on:click="export2ExcelRichang">导出excel</el-button>
                 </div>
                 <div id = "richangyongpin" style="width: 1800px; height: 800px;"> </div>
@@ -73,7 +73,7 @@
             <el-tab-pane label="保健品" name="sixth">
               <div class="chart-container">
                 <div>
-                    <el-button size="medium" type="success">导出简报</el-button>
+                    <el-button id="healthForecast" size="medium" type="success">导出简报</el-button>
                     <el-button size="medium" type="primary"  v-on:click="export2ExcelBaojian">导出excel</el-button>
                 </div>
                 <div id = "baojianpin" style="width: 1800px; height: 800px;"> </div>
@@ -114,112 +114,132 @@
     },        
     methods: {
       draw(){
-      var order = echarts.init(document.getElementById('order')); //订单数预测
-        // 绘制图表
-        order.setOption({
-              title : {
-        text: '订单数量预测',
-        },
-        tooltip : {
-            trigger: 'axis'
-        },
-        legend: {
-            data:['订单数量']
-        },
-        grid: {
-            left: '10%',
-            right: '4%',
-            bottom: '3%',
-            containLabel: true
-        },
-    calculable : true,
-    xAxis : [
-        {
-            type : 'category',
-            boundaryGap : false,
-            data : []
-        }
-    ],
-    yAxis : [
-        {
-            type : 'value',
-        }
-    ],
-     visualMap: {
-        show: false,
-        dimension: 0,
-        pieces: [{
-            lte: 29,
-            color: 'green'
-        }, {
-            gt: 29,
-            lte: 31,
-            color: 'red'
-        }]
-    },
-    series : [
-        {
-            name:'订单数量',
-            type:'line',
-            data:[]
-        },
-    ],
-        });
+            let _this = this
+            this.order = echarts.init(document.getElementById('order')); //订单数预测
+            // 绘制图表
+            this.order.setOption({
+                title : {
+                    text: '订单数量预测',
+                },
+                tooltip : {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data:['订单数量']
+                },
+                grid: {
+                    left: '10%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                calculable : true,
+                xAxis : [
+                    {
+                        type : 'category',
+                        boundaryGap : false,
+                        data : []
+                    }
+                ],
+                yAxis : [
+                    {
+                        type : 'value',
+                    }
+                ],
+                visualMap: {
+                    show: false,
+                    dimension: 0,
+                    pieces: [{
+                        lte: 29,
+                        color: 'green'
+                } , 
+                {
+                    gt: 29,
+                    lte: 31,
+                    color: 'red'
+                }]
+                },
+                series : [
+                {
+                    name:'订单数量',
+                    type:'line',
+                    data:[]
+                },
+                ],
+            });
+            //添加至简报
+            var forecastExportIf = document.getElementById('forecastExport')
+            forecastExportIf.onclick = function(){
+                var imgURL = _this.order.getDataURL()
+                console.log(imgURL)
+                localStorage.setItem("forecastExport",imgURL)
+                localStorage.setItem("forecastExportName","短期预测-订单数量预测报表")
+                alert("已经添加至简报，后续操作请至简报管理页面编辑")
+            }
 
-        var naifen = echarts.init(document.getElementById('naifen')); //奶粉类商品的预测
-        // 绘制图表
-        naifen.setOption({
-          title: {
-        text: '奶粉类商品的预测'
-    },
-    tooltip: {
-        trigger: 'axis'
-    },
-    legend: {
-        data:['爱他美（Aptamil）','佳丽雅（Gallia）','伴宝乐（Babybio）']
-    },
-    grid: {
-        left: '10%',
-        right: '4%',
-        bottom: '3%',
-        containLabel: true
-    },
-    toolbox: {
-        feature: {
-            saveAsImage: {}
-        }
-    },
-    xAxis: {
-        type: 'category',
-        boundaryGap: false,
-        data: []
-    },
-    yAxis: {
-        type: 'value'
-    },
-    series: [
-        {
-            name:'爱他美（Aptamil）',
-            type:'line',
-            // stack: '总量',
-            data:[]
-        },
-        {
-            name:'佳丽雅（Gallia）',
-            type:'line',
-            data:[]
-        },
-        {
-            name:'伴宝乐（Babybio）',
-            type:'line',
-            data:[]
-        }
-    ]
-        });
+            this.naifen = echarts.init(document.getElementById('naifen')); //奶粉类商品的预测
+            // 绘制图表
+            this.naifen.setOption({
+                title: {
+                    text: '奶粉类商品的预测'
+                },
+                tooltip: {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data:['爱他美（Aptamil）','佳丽雅（Gallia）','伴宝乐（Babybio）']
+                },
+                grid: {
+                    left: '10%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                toolbox: {
+                    feature: {
+                        saveAsImage: {}
+                    }
+                },
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: []
+                },
+                yAxis: {
+                    type: 'value'
+                },
+                series: [
+                    {
+                        name:'爱他美（Aptamil）',
+                        type:'line',
+                        // stack: '总量',
+                        data:[]
+                    },
+                    {
+                        name:'佳丽雅（Gallia）',
+                        type:'line',
+                        data:[]
+                    },
+                    {
+                        name:'伴宝乐（Babybio）',
+                        type:'line',
+                        data:[]
+                    }
+                ]
+            });
+            //添加至简报
+            var milkForecastIf = document.getElementById('milkForecast')
+            milkForecastIf.onclick = function(){
+                var imgURL = _this.naifen.getDataURL()
+                console.log(imgURL)
+                localStorage.setItem("milkForecast",imgURL)
+                localStorage.setItem("milkForecastName","短期预测-奶粉订单数量预测报表")
+                alert("已经添加至简报，后续操作请至简报管理页面编辑")
+            }
 
-    var muyingyongpin = echarts.init(document.getElementById('muyingyongpin')); //母婴用品类商品的预测
+    this.muyingyongpin = echarts.init(document.getElementById('muyingyongpin')); //母婴用品类商品的预测
         // 绘制图表
-    muyingyongpin.setOption({
+    this.muyingyongpin.setOption({
           title: {
         text: '母婴用品类的预测'
     },
@@ -256,10 +276,19 @@
         }
     ]
         });
+            //添加至简报
+            var babyProductForecastIf = document.getElementById('babyProductForecast')
+            babyProductForecastIf.onclick = function(){
+                var imgURL = _this.muyingyongpin.getDataURL()
+                console.log(imgURL)
+                localStorage.setItem("babyProductForecast",imgURL)
+                localStorage.setItem("babyProductForecastName","短期预测-母婴用品订单数量预测报表")
+                alert("已经添加至简报，后续操作请至简报管理页面编辑")
+            }
         
-      var hufupin = echarts.init(document.getElementById('hufupin')); //护肤品类商品的预测
+      this.hufupin = echarts.init(document.getElementById('hufupin')); //护肤品类商品的预测
         // 绘制图表
-        hufupin.setOption({
+        this.hufupin.setOption({
           title: {
         text: '护肤品类商品的预测'
     },
@@ -301,10 +330,19 @@
         }
     ]
         });
+        //添加至简报
+            var skinForecastIf = document.getElementById('skinForecast')
+            skinForecastIf.onclick = function(){
+                var imgURL = _this.hufupin.getDataURL()
+                console.log(imgURL)
+                localStorage.setItem("skinForecast",imgURL)
+                localStorage.setItem("skinForecastName","短期预测-护肤品订单数量预测报表")
+                alert("已经添加至简报，后续操作请至简报管理页面编辑")
+            }
 
-       var shipin = echarts.init(document.getElementById('shipin')); //食品类商品的预测
+       this.shipin = echarts.init(document.getElementById('shipin')); //食品类商品的预测
         // 绘制图表
-        shipin.setOption({
+        this.shipin.setOption({
           title: {
         text: '食品类商品的预测'
     },
@@ -341,10 +379,19 @@
         }
     ]
         });
+        //添加至简报
+            var foodForecastIf = document.getElementById('foodForecast')
+            foodForecastIf.onclick = function(){
+                var imgURL = _this.shipin.getDataURL()
+                console.log(imgURL)
+                localStorage.setItem("foodForecast",imgURL)
+                localStorage.setItem("foodForecastName","短期预测-食品订单数量预测报表")
+                alert("已经添加至简报，后续操作请至简报管理页面编辑")
+            }
 
-       var richangyongpin = echarts.init(document.getElementById('richangyongpin')); //日常用品类商品的预测
+       this.richangyongpin = echarts.init(document.getElementById('richangyongpin')); //日常用品类商品的预测
         // 绘制图表
-        richangyongpin.setOption({
+        this.richangyongpin.setOption({
           title: {
         text: '日常用品类商品的预测'
     },
@@ -387,9 +434,19 @@
     ]
         });
 
-      var baojianpin = echarts.init(document.getElementById('baojianpin')); //保健品类商品的预测
+        //添加至简报
+            var dailyForecastIf = document.getElementById('dailyForecast')
+            dailyForecastIf.onclick = function(){
+                var imgURL = _this.richangyongpin.getDataURL()
+                console.log(imgURL)
+                localStorage.setItem("dailyForecast",imgURL)
+                localStorage.setItem("dailyForecastName","短期预测-日常用品订单数量预测报表")
+                alert("已经添加至简报，后续操作请至简报管理页面编辑")
+            }
+
+      this.baojianpin = echarts.init(document.getElementById('baojianpin')); //保健品类商品的预测
         // 绘制图表
-        baojianpin.setOption({
+        this.baojianpin.setOption({
           title: {
         text: '保健品类商品的预测'
     },
@@ -431,6 +488,16 @@
         }
     ]
         });
+
+        //添加至简报
+            var healthForecastIf = document.getElementById('healthForecast')
+            healthForecastIf.onclick = function(){
+                var imgURL = _this.baojianpin.getDataURL()
+                console.log(imgURL)
+                localStorage.setItem("healthForecast",imgURL)
+                localStorage.setItem("healthForecastName","短期预测-保健品订单数量预测报表")
+                alert("已经添加至简报，后续操作请至简报管理页面编辑")
+            }
 
     this.$http.get('http://127.0.0.1:8000/api/show_predictdata')
         .then((response) => {

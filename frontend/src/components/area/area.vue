@@ -10,38 +10,31 @@
     <el-col :span="24" class="warp-main">
       <section class="chart-container">
         <el-row>
-          <!-- <el-col :span="24">
-            <div id="chartWorld" style="width:100%; height:500px;"></div>
-          </el-col> -->
+
           <h2>销售地分析</h2>
           <el-col :span="24" class="chart-classfily">
             <el-tabs type="border-card" >
               <el-tab-pane label="总销量" class="chart-card">
                 <div id="chartWorld" style="width:1100px; height:500px;"></div>       
-                <el-button type="text" size="medium" style="float: center">添加到简报</el-button>
+                <el-button id="chartWorldExport" type="text" size="medium" style="float: center">添加到简报</el-button>
               </el-tab-pane>
               <el-tab-pane label="销量" class="chart-card">
                 <div id="chartCountry" style="width:1100px; height:500px;"></div>        
-                <el-button type="text" size="medium" style="float: center">添加到简报</el-button>
+                <el-button id="chartCountryExport" type="text" size="medium" style="float: center">添加到简报</el-button>
               </el-tab-pane>
               <el-tab-pane label="品牌">
                 <div id="chartBrands" style="width:1100px; height:500px;"></div>
-                <el-button type="text" size="medium" style="float: center">添加到简报</el-button>
+                <el-button id="chartBrandsExport" type="text" size="medium" style="float: center">添加到简报</el-button>
               </el-tab-pane>
             </el-tabs>
           </el-col>
-          <!-- <el-col :span="24">
-            <div id="chartCountry" style="width:100%; height:500px;"></div>
-          </el-col>
-          <el-col :span="24">
-            <div id="chartBrands" style="width:100%; height:500px;"></div>
-          </el-col> -->
+
           <h2>购买地分析</h2>
           <el-col :span="24" class="chart-classfily">
             <el-tabs type="border-card" >
               <el-tab-pane label="总购买" class="chart-card">
                 <div id="chartChina" style="width:1100px; height:400px;"></div>      
-                <el-button type="text" size="medium" style="float: center">添加到简报</el-button>
+                <el-button id="chartChinaExport" type="text" size="medium" style="float: center">添加到简报</el-button>
               </el-tab-pane>
               <!-- <el-tab-pane label="销量" class="chart-card">
                 <div id="chartCountry" style="width:1100px; height:500px;"></div>        
@@ -53,9 +46,6 @@
               </el-tab-pane> -->
             </el-tabs>
           </el-col>
-          <!-- <el-col :span="12">
-            <div id="chartChina" style="width:100%; height:400px;"></div>
-          </el-col> -->
 
         </el-row>
       </section>
@@ -174,92 +164,21 @@
                 {name : 'Portugal', value : 1},
               ]
             },
-            // {
-            //   name: '日常用品',
-            //   type: 'map',
-            //   mapType: 'world',
-            //   label: {
-            //     normal: {
-            //         show: false
-            //     },
-            //     emphasis: {
-            //         show: true
-            //     }
-            //   },
-            //   data:[
-            //     {name : 'Germany', value : 193},
-            //     {name : 'France', value : 0},
-            //     {name : 'Spain', value : 0},
-            //     {name : 'United States of America', value : 0},
-            //     {name : 'Finland', value : 0},
-            //     {name : 'Portugal', value : 0},
-            //   ]
-            // },
-            // {
-            //   name: '护肤品',
-            //   type: 'map',
-            //   mapType: 'world',
-            //   label: {
-            //     normal: {
-            //         show: false
-            //     },
-            //     emphasis: {
-            //         show: true
-            //     }
-            //   },
-            //   data:[
-            //     {name : 'Germany', value : 303},
-            //     {name : 'France', value : 47},
-            //     {name : 'Spain', value : 37},
-            //     {name : 'United States of America', value : 0},
-            //     {name : 'Finland', value : 0},
-            //     {name : 'Portugal', value : 0},
-            //   ]
-            // },
-            // {
-            //   name: '食品',
-            //   type: 'map',
-            //   mapType: 'world',
-            //   label: {
-            //     normal: {
-            //         show: false
-            //     },
-            //     emphasis: {
-            //         show: true
-            //     }
-            //   },
-            //   data:[
-            //     {name : 'Germany', value : 348},
-            //     {name : 'France', value : 36},
-            //     {name : 'Spain', value : 0},
-            //     {name : 'United States of America', value : 0},
-            //     {name : 'Finland', value : 0},
-            //     {name : 'Portugal', value : 0},
-            //   ]
-            // },
-            // {
-            //   name: '保健品',
-            //   type: 'map',
-            //   mapType: 'world',
-            //   label: {
-            //     normal: {
-            //         show: false
-            //     },
-            //     emphasis: {
-            //         show: true
-            //     }
-            //   },
-            //   data:[
-            //     {name : 'Germany', value : 246},
-            //     {name : 'France', value : 20},
-            //     {name : 'Spain', value : 0},
-            //     {name : 'United States of America', value : 0},
-            //     {name : 'Finland', value : 0},
-            //     {name : 'Portugal', value : 0},
-            //  ]
-            // }
+
+
           ]
         });
+
+        //添加至简报
+        var exportIf = document.getElementById('chartWorldExport')
+        exportIf.onclick = function(){
+          var imgURL = _this.chartWorld.getDataURL()
+          console.log(imgURL)
+          localStorage.setItem("chartWorld",imgURL)
+          localStorage.setItem("chartWorldName","销售地分析-总销量报表")
+
+          alert("已经添加至简报，后续操作请至简报管理页面编辑")
+        }
       },
       
       drawCountry(){
@@ -392,6 +311,17 @@
         .catch(() => {
           console.log("error")
         })
+
+        //添加至简报
+        var exportIf = document.getElementById('chartCountryExport')
+        exportIf.onclick = function(){
+          var imgURL = _this.chartCountry.getDataURL()
+          console.log(imgURL)
+          localStorage.setItem("chartCountry",imgURL)
+          localStorage.setItem("chartCountryName","销售地分析-销量报表")
+
+          alert("已经添加至简报，后续操作请至简报管理页面编辑")
+        }
       },
 
       drawBrands(){
@@ -524,12 +454,22 @@
         .catch(() => {
           console.log("error")
         })
+
+        //添加至简报
+        var exportIf = document.getElementById('chartBrandsExport')
+        exportIf.onclick = function(){
+          var imgURL = _this.chartBrands.getDataURL()
+          console.log(imgURL)
+          localStorage.setItem("chartBrands",imgURL)
+          localStorage.setItem("chartBrandsName","销售地分析-品牌报表")
+
+          alert("已经添加至简报，后续操作请至简报管理页面编辑")
+        }
       },
 
       drawChina(){
         let _this = this;
         this.chartChina = echarts.init(document.getElementById('chartChina'));
-
         this.chartChina.setOption({
           title : {
             text: '购买地分析',
@@ -589,7 +529,6 @@
             },
           ]
         });
-
         axios.get('/getsalesanalysis').then((res) => {
           let res1 = res.data.salesanalysis
           this.chartChina.setOption({
@@ -605,7 +544,19 @@
           console.log("error")
         })
 
+        //添加至简报
+        var exportIf = document.getElementById('chartChinaExport')
+        exportIf.onclick = function(){
+          var imgURL = _this.chartChina.getDataURL()
+          console.log(imgURL)
+          localStorage.setItem("chartChina",imgURL)
+          localStorage.setItem("chartChinaName","购买地分析-总销量报表")
+
+          alert("已经添加至简报，后续操作请至简报管理页面编辑")
+        }
+
       },
+      
     },
   }
 </script>

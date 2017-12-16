@@ -12,27 +12,27 @@
       <el-tabs type="border-card" >
         <el-tab-pane label="爱他美">
           <div id="aptamil" style="width:1100px; height:550px;"></div>          
-          <el-button type="text" size="medium" style="float: center">添加到简报</el-button>
+          <el-button id="aptamilExport" type="text" size="medium" style="float: center">添加到简报</el-button>
         </el-tab-pane>
         <el-tab-pane label="喜宝">
           <div id="hipp" style="width:1100px; height:550px;"></div>
-          <el-button type="text" size="medium" style="float: center">添加到简报</el-button>
+          <el-button id="hippExport" type="text" size="medium" style="float: center">添加到简报</el-button>
         </el-tab-pane>
         <el-tab-pane label="博朗">
           <div id="braun" style="width:1100px; height:550px;"></div>
-          <el-button type="text" size="medium" style="float: center">添加到简报</el-button>
+          <el-button id="braunExport" type="text" size="medium" style="float: center">添加到简报</el-button>
         </el-tab-pane>
         <el-tab-pane label="芭乐雅">
           <div id="balea" style="width:1100px; height:550px;"></div>
-          <el-button type="text" size="medium" style="float: center">添加到简报</el-button>
+          <el-button id="baleaExport" type="text" size="medium" style="float: center">添加到简报</el-button>
         </el-tab-pane>
         <el-tab-pane label="facelle">
           <div id="facelle" style="width:1100px; height:550px;"></div>
-          <el-button type="text" size="medium" style="float: center">添加到简报</el-button>
+          <el-button id="facelleExport" type="text" size="medium" style="float: center">添加到简报</el-button>
         </el-tab-pane>
         <el-tab-pane label="拉杜蓝乔">
           <div id="LaTourangelle" style="width:1100px; height:550px;"></div>
-          <el-button type="text" size="medium" style="float: center">添加到简报</el-button>
+          <el-button id="LaTourangelleExport" type="text" size="medium" style="float: center">添加到简报</el-button>
         </el-tab-pane>
       </el-tabs>
     </el-col>
@@ -128,6 +128,17 @@ import axios from 'axios'
         .catch(() => {
           console.log("error")
         })
+
+        //添加至简报
+        var exportIf = document.getElementById('aptamilExport')
+        exportIf.onclick = function(){
+          var imgURL = _this.aptamil.getDataURL()
+          console.log(imgURL)
+          localStorage.setItem("aptamil",imgURL)
+          localStorage.setItem("aptamilName","价格关联分析-爱他美报表")
+
+          alert("已经添加至简报，后续操作请至简报管理页面编辑")
+        }
       },
       drawhipp(){
         let _this = this;
@@ -191,6 +202,17 @@ import axios from 'axios'
         .catch(() => {
           console.log("error")
         })
+
+        //添加至简报
+        var exportIf = document.getElementById('hippExport')
+        exportIf.onclick = function(){
+          var imgURL = _this.hipp.getDataURL()
+          console.log(imgURL)
+          localStorage.setItem("hipp",imgURL)
+          localStorage.setItem("hippName","价格关联分析-喜宝报表")
+
+          alert("已经添加至简报，后续操作请至简报管理页面编辑")
+        }
       },
       drawbraun(){
         let _this = this;
@@ -254,6 +276,17 @@ import axios from 'axios'
         .catch(() => {
           console.log("error")
         })
+
+        //添加至简报
+        var exportIf = document.getElementById('braunExport')
+        exportIf.onclick = function(){
+          var imgURL = _this.braun.getDataURL()
+          console.log(imgURL)
+          localStorage.setItem("braun",imgURL)
+          localStorage.setItem("braunName","价格关联分析-博朗报表")
+
+          alert("已经添加至简报，后续操作请至简报管理页面编辑")
+        }
       },
       drawbalea(){
         let _this = this;
@@ -317,6 +350,17 @@ import axios from 'axios'
         .catch(() => {
           console.log("error")
         })
+
+        //添加至简报
+        var exportIf = document.getElementById('baleaExport')
+        exportIf.onclick = function(){
+          var imgURL = _this.balea.getDataURL()
+          console.log(imgURL)
+          localStorage.setItem("balea",imgURL)
+          localStorage.setItem("baleaName","价格关联分析-芭乐雅报表")
+
+          alert("已经添加至简报，后续操作请至简报管理页面编辑")
+        }
       },
       drawfacelle(){
         let _this = this;
@@ -380,6 +424,17 @@ import axios from 'axios'
         .catch(() => {
           console.log("error")
         })
+
+        //添加至简报
+        var exportIf = document.getElementById('facelleExport')
+        exportIf.onclick = function(){
+          var imgURL = _this.facelle.getDataURL()
+          console.log(imgURL)
+          localStorage.setItem("facelle",imgURL)
+          localStorage.setItem("facelleName","价格关联分析-facelle报表")
+
+          alert("已经添加至简报，后续操作请至简报管理页面编辑")
+        }
       },
       drawLaTourangelle(){
         let _this = this;
@@ -443,6 +498,17 @@ import axios from 'axios'
         .catch(() => {
           console.log("error")
         })
+
+        //添加至简报
+        var exportIf = document.getElementById('LaTourangelleExport')
+        exportIf.onclick = function(){
+          var imgURL = _this.LaTourangelle.getDataURL()
+          console.log(imgURL)
+          localStorage.setItem("LaTourangelle",imgURL)
+          localStorage.setItem("LaTourangelleName","价格关联分析-拉杜蓝乔报表")
+
+          alert("已经添加至简报，后续操作请至简报管理页面编辑")
+        }
       },
     }
 

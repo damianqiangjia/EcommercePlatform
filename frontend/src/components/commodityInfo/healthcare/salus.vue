@@ -87,7 +87,8 @@
   <el-row class="warp">
     <el-col>
       <div class="chart-container">
-      <div id = "one" style="width: 100%; height: 500px;"> </div>
+      <div id = "salusInfo" style="width: 100%; height: 500px;"> </div>
+      <el-button id="salusInfoExport" type="text" size="medium" style="float: center">添加到简报</el-button>
       </div>
     </el-col>
   </el-row>
@@ -142,9 +143,10 @@ import axios from 'axios'
       },
     methods: {
       draw(){
-            var one = echarts.init(document.getElementById('one'));
+        let _this = this
+            this.salusInfo = echarts.init(document.getElementById('salusInfo'));
               // 绘制图表
-              one.setOption
+              this.salusInfo.setOption
               ({
                  title : {
         text: '莎露斯 在淘宝平台销量变化及预测',
@@ -216,6 +218,17 @@ import axios from 'axios'
         }
     ]
   })
+
+            //添加至简报
+            var exportIf = document.getElementById('salusInfoExport')
+            exportIf.onclick = function(){
+                var imgURL = _this.salusInfo.getDataURL()
+                console.log(imgURL)
+                localStorage.setItem("salusInfo",imgURL)
+                localStorage.setItem("salusInfoName","莎露斯 在淘宝平台销量变化及预测报表")
+
+                alert("已经添加至简报，后续操作请至简报管理页面编辑")
+            }
             },
             getData(){
                 console.log("===getData====")

@@ -23,5 +23,6 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 # 11.10  增加了趋势分析和短期预测的部分
 # 11.11  完成短期预测部分
 
-# 12.15 报表导出功能初步完成
+# 12.16 报表导出功能完成
+
 

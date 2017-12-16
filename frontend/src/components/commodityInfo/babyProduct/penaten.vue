@@ -83,7 +83,8 @@
 <el-row class="warp">
     <el-col>
       <div class="chart-container">
-      <div id = "one" style="width: 100%; height: 500px;"> </div>
+      <div id = "penatenInfo" style="width: 100%; height: 500px;"> </div>
+      <el-button id="penatenInfoExport" type="text" size="medium" style="float: center">添加到简报</el-button>
       </div>
     </el-col>
 </el-row>
@@ -138,33 +139,33 @@ import axios from 'axios'
   },
     methods: {
       draw(){
-            var one = echarts.init(document.getElementById('one'));
-              // 绘制图表
-              one.setOption
-              ({
-                 title : {
-        text: '贝娜婷 在淘宝平台销量变化及预测',
-        left:'center'
-    },
-    grid:{
-                    x:50,
-                    y:50,
-                    x2:30,
-                    y2:30,
-                    borderWidth:1
-                },
-    tooltip : {
-        trigger: 'axis'
-    },
-    toolbox: {
-        show : true,
-        feature : {
-            mark : {show: true},
-        }
-    },
-    calculable : true,
-    xAxis : [
-        {
+        let _this = this;
+        this.penatenInfo = echarts.init(document.getElementById('penatenInfo'));
+        // 绘制图表
+        this.penatenInfo.setOption({
+          title : {
+            text: '贝娜婷 在淘宝平台销量变化及预测',
+            left:'center'
+          },
+          grid:{
+            x:50,
+            y:50,
+            x2:30,
+            y2:30,
+            borderWidth:1
+          },
+          tooltip : {
+            trigger: 'axis'
+          },
+          toolbox: {
+            show : true,
+            feature : {
+              mark : {show: true},
+            }
+          },
+          calculable : true,
+          xAxis : [
+          {
             type : 'category',
             boundaryGap : false,
             data : ['20170511','20170512','20170513','20170514','20170515','20170516','20170517','20170518',
@@ -173,27 +174,27 @@ import axios from 'axios'
                '20170604','20170605','20170606','20170607','20170608','20170609','20170610','20170611',
                '20170612','20170613','20170614','20170615','20170616','20170617','20170618','20170619',
                '20170620','20170621','20170622', '20170623', '20170624']
-        }
-    ],
-    yAxis : [
-        {
+          }
+          ],
+          yAxis : [
+          {
             type : 'value',
-        }
-    ],
-     visualMap: {
-        show: false,
-        dimension: 0,
-        pieces: [{
-            lte: 42,
-            color: 'green'
-        }, {
-            gt: 42,
-            lte: 46,
-            color: 'red'
-        }]
-    },
-    series : [
-        {
+          }
+          ],
+          visualMap: {
+            show: false,
+            dimension: 0,
+            pieces: [{
+                lte: 42,
+                color: 'green'
+            }, {
+              gt: 42,
+              lte: 46,
+              color: 'red'
+            }]
+          },
+          series : [
+          {
             name:'销量变化',
             type:'line',
             data:[4,3,4,4,4,4,4,4,4,4,4,4,4,4,3,3,3,4,4,4,4,4,4,3,4,3,
@@ -209,10 +210,21 @@ import axios from 'axios'
                     {type : 'average', name: '平均值'}
                 ]
             }
-        }
-    ]
-  })
-            },
+          }
+          ]
+        })
+
+        //添加至简报
+            var exportIf = document.getElementById('penatenInfoExport')
+            exportIf.onclick = function(){
+                var imgURL = _this.penatenInfo.getDataURL()
+                console.log(imgURL)
+                localStorage.setItem("penatenInfo",imgURL)
+                localStorage.setItem("penatenInfoName","贝娜婷 在淘宝平台销量变化及预测报表")
+
+                alert("已经添加至简报，后续操作请至简报管理页面编辑")
+            }
+      },
             getData(){
                 axios.get('/getbabyProduct').then((res) => { 
                   console.log(res) 

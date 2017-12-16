@@ -14,10 +14,10 @@
     <div class="grid-content bg-purple">
       <div class="chart-container">
       <div>
-        <el-button size="medium" type="success">导出简报</el-button>
+        <el-button id="orderQuantityExport" size="medium" type="success">导出简报</el-button>
         <el-button size="medium" type="primary"  v-on:click="export2ExcelOne">导出excel</el-button>
       </div>
-      <div id = "one" style="width: 100%; height: 500px;"> </div>
+      <div id = "one" style="width: 100%; height: 400px;"> </div>
       </div>
     </div>
   </el-col>
@@ -25,10 +25,10 @@
     <div class="grid-content bg-purple">
       <div class="chart-container">
       <div>
-        <el-button size="medium" type="success">导出简报</el-button>
+        <el-button id="orderPriceExport" size="medium" type="success">导出简报</el-button>
         <el-button size="medium" type="primary"  v-on:click="export2ExcelOne">导出excel</el-button>
       </div>
-      <div id = "two" style="width: 100%; height: 500px;"> </div>
+      <div id = "two" style="width: 100%; height: 400px;"> </div>
       </div>
     </div>
   </el-col>
@@ -39,7 +39,7 @@
     <div class="grid-content bg-purple">
       <div class="chart-container">
       <div>
-        <el-button size="medium" type="success">导出简报</el-button>
+        <el-button id="allKindsExport" size="medium" type="success">导出简报</el-button>
         <el-button size="medium" type="primary"  v-on:click="export2ExcelTwo">导出excel</el-button>
       </div>
       <div id = "three" style="width: 100%; height: 800px;"> </div>
@@ -92,10 +92,10 @@
         })
     },
       draw(){
-      var one = echarts.init(document.getElementById('one'));
+        let _this = this
+        this.one = echarts.init(document.getElementById('one'));
         // 绘制图表
-        one.setOption
-        ({
+        this.one.setOption({
           title : {
             text: '订单数变化趋势',
             subtext: '最近30天'
@@ -133,10 +133,19 @@
                 },
             ]
         })
+        //添加至简报
+        var orderQuantityExportIf = document.getElementById('orderQuantityExport')
+        orderQuantityExportIf.onclick = function(){
+          var imgURL = _this.one.getDataURL()
+          console.log(imgURL)
+          localStorage.setItem("orderQuantityExport",imgURL)
+          localStorage.setItem("orderQuantityExportName","趋势分析-订单数量变化趋势报表")
+          alert("已经添加至简报，后续操作请至简报管理页面编辑")
+        }
         
-        var two = echarts.init(document.getElementById('two'));
+        this.two = echarts.init(document.getElementById('two'));
         // 绘制图表
-        two.setOption({
+        this.two.setOption({
           title : {
             text: '订单金额数变化趋势',
             subtext: '最近30天'
@@ -174,10 +183,19 @@
                 },
             ]
         })
+        //添加至简报
+        var orderPriceExportIf = document.getElementById('orderPriceExport')
+        orderPriceExportIf.onclick = function(){
+          var imgURL = _this.two.getDataURL()
+          console.log(imgURL)
+          localStorage.setItem("orderPriceExport",imgURL)
+          localStorage.setItem("orderPriceExportName","趋势分析-订单金额变化趋势报表")
+          alert("已经添加至简报，后续操作请至简报管理页面编辑")
+        }
 
-      var three = echarts.init(document.getElementById('three'));
+        this.three = echarts.init(document.getElementById('three'));
         // 绘制图表
-        three.setOption({
+        this.three.setOption({
           tooltip: {
           trigger: 'axis',
           axisPointer: { // 坐标轴指示器，坐标轴触发有效
@@ -304,8 +322,19 @@
           }
           ]
         });
-        this.$http.get('http://127.0.0.1:8000/api/show_orderdata')
-        .then((response) => {
+        //添加至简报
+        var allKindsExportIf = document.getElementById('allKindsExport')
+        allKindsExportIf.onclick = function(){
+          var imgURL = _this.three.getDataURL()
+          console.log(imgURL)
+          localStorage.setItem("allKindsExport",imgURL)
+          localStorage.setItem("allKindsExportName","趋势分析-六类商品变化趋势报表")
+          alert("已经添加至简报，后续操作请至简报管理页面编辑")
+        }
+
+
+
+        this.$http.get('http://127.0.0.1:8000/api/show_orderdata').then((response) => {
             var res = JSON.parse(response.bodyText)
             if (res.error_num == 0) {
               for(var i = 0; i < 29; i++){
@@ -317,7 +346,7 @@
               this.$message.error('显示订单失败')
               console.log(res['msg'])
             }
-          one.setOption({
+          _this.one.setOption({
           xAxis: {
             data: this.date,
           },
@@ -327,7 +356,7 @@
             data: this.orderNumber,
           }]
           })
-          two.setOption({
+          _this.two.setOption({
           xAxis: {
             data: this.date,
           },
@@ -338,8 +367,7 @@
           }]
           })
         })
-        this.$http.get('http://127.0.0.1:8000/api/show_typedata')
-        .then((response) => {
+        this.$http.get('http://127.0.0.1:8000/api/show_typedata').then((response) => {
             var res = JSON.parse(response.bodyText)
             if (res.error_num == 0) {
               for(var i = 0; i < 29; i++){
@@ -354,7 +382,7 @@
               this.$message.error('显示订单失败')
               console.log(res['msg'])
             }
-          three.setOption({
+          _this.three.setOption({
           xAxis: {
             data: this.date
           },
@@ -444,9 +472,6 @@
 <style>
   .el-row {
     margin-bottom: 20px;
-    /* &:last-child {
-      margin-bottom: 0;
-    } */
   }
   .el-col {
     border-radius: 4px;
