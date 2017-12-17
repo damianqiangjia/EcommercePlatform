@@ -122,6 +122,13 @@ import axios from 'axios'
                 itemStyle: {normal: {areaStyle: {type: 'default'}}},
                 data: res1.data1
               },
+              {
+                name:'销量数',
+                type:'line',
+                smooth:true,
+                itemStyle: {normal: {areaStyle: {type: 'default'}}},
+                data: res1.data2
+              },
             ]
           })
         })
@@ -195,6 +202,13 @@ import axios from 'axios'
                 smooth:true,
                 itemStyle: {normal: {areaStyle: {type: 'default'}}},
                 data: res1.data1
+              },
+              {
+                name:'销量数',
+                type:'line',
+                smooth:true,
+                itemStyle: {normal: {areaStyle: {type: 'default'}}},
+                data: res1.data2
               },
             ]
           })
@@ -270,6 +284,13 @@ import axios from 'axios'
                 itemStyle: {normal: {areaStyle: {type: 'default'}}},
                 data: res1.data1
               },
+              {
+                name:'销量数',
+                type:'line',
+                smooth:true,
+                itemStyle: {normal: {areaStyle: {type: 'default'}}},
+                data: res1.data2
+              },
             ]
           })
         })
@@ -343,6 +364,13 @@ import axios from 'axios'
                 smooth:true,
                 itemStyle: {normal: {areaStyle: {type: 'default'}}},
                 data: res1.data1
+              },
+              {
+                name:'销量数',
+                type:'line',
+                smooth:true,
+                itemStyle: {normal: {areaStyle: {type: 'default'}}},
+                data: res1.data2
               },
             ]
           })
@@ -418,6 +446,13 @@ import axios from 'axios'
                 itemStyle: {normal: {areaStyle: {type: 'default'}}},
                 data: res1.data1
               },
+              {
+                name:'销量数',
+                type:'line',
+                smooth:true,
+                itemStyle: {normal: {areaStyle: {type: 'default'}}},
+                data: res1.data2
+              },
             ]
           })
         })
@@ -491,6 +526,13 @@ import axios from 'axios'
                 smooth:true,
                 itemStyle: {normal: {areaStyle: {type: 'default'}}},
                 data: res1.data1
+              },
+              {
+                name:'销量数',
+                type:'line',
+                smooth:true,
+                itemStyle: {normal: {areaStyle: {type: 'default'}}},
+                data: res1.data2
               },
             ]
           })

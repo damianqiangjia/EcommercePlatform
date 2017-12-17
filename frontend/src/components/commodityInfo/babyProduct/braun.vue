@@ -13,19 +13,6 @@
 
   <el-row  class="warp">
     <el-col :span="24" class="warp-main" v-if = "!showAttributes">
-        <!--工具条-->
-        <el-col :span="24" class="toolbar" style="padding-bottom: 0px;">
-          <el-form >
-            <el-form-item>
-              <el-input v-model="select_word" placeholder="输入关键词" class="handle-input">
-              </el-input>
-              <el-button type="primary" @click="search">查询</el-button>
-              <!-- <el-button type="primary" class="handle-del" @click="delAll">批量删除</el-button> -->
-            </el-form-item>
-            
-          </el-form>
-        </el-col>
-
       <!--列表-->
       <el-table :data="data" height="350" border style="width: 100%" ref="singleTable"
       @row-click="handleRowClick">

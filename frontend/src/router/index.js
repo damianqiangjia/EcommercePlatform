@@ -389,22 +389,6 @@ let router = new Router({
                         name: '个人信息',
                         menuShow: true
                     }, ]
-                },
-                {
-                    routerID: '8-2',
-                    path: '/user',
-                    component: subView,
-                    name: '密码',
-                    menuShow: true,
-                    iconCls: 'iconfont icon-tree', // 图标样式class
-                    leaf: true, // 只有一个节点
-                    children: [{
-                        routerID: '8-2-1',
-                        path: '/user/changepwd',
-                        component: UserChangePwd,
-                        name: '修改密码',
-                        menuShow: true
-                    }, ]
                 }
             ]
         }

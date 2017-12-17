@@ -11,8 +11,9 @@
       <section class="chart-container">
         <el-row>
 
-          <h2>销售地分析</h2>
+          
           <el-col :span="24" class="chart-classfily">
+            <h2>销售地分析</h2>
             <el-tabs type="border-card" >
               <el-tab-pane label="总销量" class="chart-card">
                 <div id="chartWorld" style="width:1100px; height:500px;"></div>       
@@ -29,8 +30,9 @@
             </el-tabs>
           </el-col>
 
-          <h2>购买地分析</h2>
+          
           <el-col :span="24" class="chart-classfily">
+            <h2>购买地分析</h2>
             <el-tabs type="border-card" >
               <el-tab-pane label="总购买" class="chart-card">
                 <div id="chartChina" style="width:1100px; height:400px;"></div>      
