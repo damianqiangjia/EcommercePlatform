@@ -15,25 +15,25 @@
     <el-col :span="24" class="warp-main" v-if = "!showAttributes" >
 
       <!--列表-->
-      <el-table :data="data" height="200" border style="width: 100%" ref="singleTable"
+      <el-table :data="data" height="181" border style="width: 100%" ref="singleTable"
       @row-click="handleRowClick">
-        <el-table-column type="index" width="60"></el-table-column>
-        <el-table-column prop="productID" label="商品ID" width="90"></el-table-column>
-        <el-table-column prop="productname" label="商品名称" width="280" >
+        <el-table-column type="index" width="50%"></el-table-column>
+        <el-table-column prop="productID" label="商品ID" width="80%"></el-table-column>
+        <el-table-column prop="productname" label="商品名称" width="300%" >
         </el-table-column>
-        <el-table-column prop="brand" label="品牌" width="120">
+        <el-table-column prop="brand" label="品牌" width="80%">
         </el-table-column>
-        <el-table-column prop="class" label="类别" width="120">
+        <el-table-column prop="class" label="类别" width="100%">
         </el-table-column>
-        <el-table-column prop="addr" label="销售地" width="100">
+        <el-table-column prop="addr" label="销售地" width="100%">
         </el-table-column>
-        <el-table-column prop="addrID" label="销售地ID" width="100">
+        <el-table-column prop="addrID" label="销售地ID" width="100%">
         </el-table-column>
-        <el-table-column prop="business" label="电商" width="200">
+        <el-table-column prop="business" label="电商" width="250%">
         </el-table-column>
-        <el-table-column prop="businessID" label="电商ID" width="90">
+        <el-table-column prop="businessID" label="电商ID" width="90%">
         </el-table-column>
-        <el-table-column prop="price" label="价格" width="90" sortable>
+        <el-table-column prop="price" label="价格" width="90%" sortable>
         </el-table-column>
       </el-table>
     </el-col>

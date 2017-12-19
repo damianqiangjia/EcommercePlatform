@@ -422,16 +422,16 @@
           })
         })
           window.onresize = function(){
-          one.resize();
-          two.resize();
-          three.resize();
+          _this.one.resize();
+          _this.two.resize();
+          _this.three.resize();
           }   
     },
     export2ExcelOne() {
 　　require.ensure([], () => {
 　　　　const { export_json_to_excel } = require('../../vendor/Export2Excel');
 　　　　const tHeader = ['日期', '订单数量','商品数量','订单总价格'];
-　　　　const filterVal = ['date', 'order_count', 'product_count', 'allprice_count'];
+　　　　const filterVal = ['date', 'order_count', 'product_count', 'allprice'];
         this.$http.get('http://127.0.0.1:8000/api/show_orderdata')
         .then((response) => {
             var res = JSON.parse(response.bodyText)

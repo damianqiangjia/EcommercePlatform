@@ -41,7 +41,7 @@
                     <el-button id="babyProductForecast" size="medium" type="success">导出简报</el-button>
                     <el-button size="medium" type="primary"  v-on:click="export2ExcelMuying">导出excel</el-button>
                 </div>
-                <div id = "muyingyongpin" class="orderChart"> </div>
+                <div id = "muyingyongpin" class="productChart"> </div>
               </div>
             </el-tab-pane>
             <el-tab-pane label="护肤品" name="third">
@@ -50,7 +50,7 @@
                     <el-button id="skinForecast" size="medium" type="success">导出简报</el-button>
                     <el-button size="medium" type="primary"  v-on:click="export2ExcelHufu">导出excel</el-button>
                 </div>
-                <div id = "hufupin" class="orderChart"> </div>
+                <div id = "hufupin" class="productChart"> </div>
               </div>
             </el-tab-pane>
             <el-tab-pane label="食品" name="fourth">
@@ -59,7 +59,7 @@
                     <el-button id="foodForecast" size="medium" type="success">导出简报</el-button>
                     <el-button size="medium" type="primary"  v-on:click="export2ExcelShipin">导出excel</el-button>
                 </div>
-                <div id = "shipin" class="orderChart"> </div>
+                <div id = "shipin" class="productChart"> </div>
               </div>
             </el-tab-pane>
             <el-tab-pane label="日常用品" name="fifth">
@@ -68,7 +68,7 @@
                     <el-button id="dailyForecast" size="medium" type="success">导出简报</el-button>
                     <el-button size="medium" type="primary"  v-on:click="export2ExcelRichang">导出excel</el-button>
                 </div>
-                <div id = "richangyongpin" class="orderChart"> </div>
+                <div id = "richangyongpin" class="productChart"> </div>
               </div>
             </el-tab-pane>
             <el-tab-pane label="保健品" name="sixth">
@@ -77,7 +77,7 @@
                     <el-button id="healthForecast" size="medium" type="success">导出简报</el-button>
                     <el-button size="medium" type="primary"  v-on:click="export2ExcelBaojian">导出excel</el-button>
                 </div>
-                <div id = "baojianpin" class="orderChart"> </div>
+                <div id = "baojianpin" class="productChart"> </div>
               </div>
             </el-tab-pane>
           </el-tabs>
@@ -539,7 +539,7 @@
               this.$message.error('显示预测数据失败')
               console.log(res['msg'])
             }
-          order.setOption({
+          _this.order.setOption({
           xAxis: {
             data: this.date
           },
@@ -560,7 +560,7 @@
           }
           ]
           })
-        naifen.setOption({
+        _this.naifen.setOption({
           xAxis: {  
             data: this.date
           },
@@ -590,7 +590,7 @@
             }
           ]
           })
-        muyingyongpin.setOption({
+        _this.muyingyongpin.setOption({
           xAxis: {  
             data: this.date
           },
@@ -610,7 +610,7 @@
             },
           ]
           })
-        hufupin.setOption({
+        _this.hufupin.setOption({
           xAxis: {  
             data: this.date
           },
@@ -635,7 +635,7 @@
             }
           ]
           })
-        shipin.setOption({
+        _this.shipin.setOption({
           xAxis: {  
             data: this.date
           },
@@ -655,7 +655,7 @@
             }
           ]
           })
-        richangyongpin.setOption({
+        _this.richangyongpin.setOption({
           xAxis: {  
             data: this.date
           },
@@ -680,7 +680,7 @@
             }
           ]
           })
-        baojianpin.setOption({
+        _this.baojianpin.setOption({
           xAxis: {  
             data: this.date
           },
@@ -908,12 +908,22 @@ export2ExcelBaojian() {
   }
 </script>
 
-<style>
+<style scoped>
+.el-row {
+    margin-bottom: 20px;
+  }
+  .el-col {
+    border-radius: 4px;
+  }
     .card-self {
         margin-top: 20px;
     }
     .orderChart{
       width: 100%;
+      height: 500px;
+  }
+    .productChart{
+      width: 2080%;
       height: 500px;
   }
     .bg-purple {

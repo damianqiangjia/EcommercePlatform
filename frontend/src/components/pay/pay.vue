@@ -58,6 +58,7 @@
       return {
         msg: 'hello vue',
         tableData: null,
+        china:[],
         worlddata:[],
         typedata:[],
       }
@@ -68,9 +69,9 @@
     methods: {
       draw(){
             let _this = this
-            this.china = echarts.init(document.getElementById('china'));
+            _this.china = echarts.init(document.getElementById('china'));
             // 绘制图表
-            this.china.setOption({
+            _this.china.setOption({
                 title : {
                 text: '购买地区分析',
                 subtext: '各地区近一个月总交易金额',
@@ -147,7 +148,7 @@
                     list[i]=res['list'][i].fields;  
                 }  
                 console.log(list)
-                china.setOption({
+                _this.china.setOption({
                     series : [
                     {
                         name: '总金额',
@@ -157,8 +158,8 @@
                 })
            })
 
-            this.worldone = echarts.init(document.getElementById('worldone'));
-            this.worldone.setOption({
+            _this.worldone = echarts.init(document.getElementById('worldone'));
+            _this.worldone.setOption({
                 title: {
                     x: 'center',
                     text: '产地国家销量图',
@@ -386,12 +387,12 @@
 </script>
 
 <style scoped>
-/* .el-row {
+.el-row {
     margin-bottom: 20px;
   }
   .el-col {
     border-radius: 4px;
-  } */
+  }
   .bg-purple {
     background: #d3dce6;
   }
