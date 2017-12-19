@@ -9,34 +9,34 @@
     </el-col>
 
     <el-col :span="24" class="chart-container">
-      <div id="chartSales" style="width:85%; height:600px;"></div>
+      <div id="chartSales" style="width:100%; height:600px;"></div>
       <el-button id="chartSalesExport" type="text" size="medium" style="float: center">添加到简报</el-button>
     </el-col>
 
     <el-col :span="24" class="chart-classfily">
       <el-tabs type="border-card" >
         <el-tab-pane label="母婴用品">
-          <div id="chartbabyProduct" style="width:1100px; height:550px;"></div>          
+          <div id="chartbabyProduct" style="width:1200%; height:550px;"></div>          
           <el-button id="chartbabyProductExport" type="text" size="medium" style="float: center">添加到简报</el-button>
         </el-tab-pane>
         <el-tab-pane label="奶粉">
-          <div id="chartMilk" style="width:1100px; height:550px;"></div>
+          <div id="chartMilk" style="width:1200%; height:550px;"></div>
           <el-button id="chartMilkExport" type="text" size="medium" style="float: center">添加到简报</el-button>
         </el-tab-pane>
         <el-tab-pane label="日常用品">
-          <div id="chartDaily" style="width:1100px; height:550px;"></div>
+          <div id="chartDaily" style="width:1200%; height:550px;"></div>
           <el-button id="chartDailyExport" type="text" size="medium" style="float: center">添加到简报</el-button>
         </el-tab-pane>
         <el-tab-pane label="护肤品">
-          <div id="chartSkin" style="width:1100px; height:550px;"></div>
+          <div id="chartSkin" style="width:1200%; height:550px;"></div>
           <el-button id="chartSkinExport" type="text" size="medium" style="float: center">添加到简报</el-button>
         </el-tab-pane>
         <el-tab-pane label="食品">
-          <div id="chartFood" style="width:1100px; height:550px;"></div>
+          <div id="chartFood" style="width:1200%; height:550px;"></div>
           <el-button id="chartFoodExport" type="text" size="medium" style="float: center">添加到简报</el-button>
         </el-tab-pane>
         <el-tab-pane label="保健品">
-          <div id="chartHealth" style="width:1100px; height:550px;"></div>
+          <div id="chartHealth" style="width:1200%; height:550px;"></div>
           <el-button id="chartHealthExport" type="text" size="medium" style="float: center">添加到简报</el-button>
         </el-tab-pane>
       </el-tabs>

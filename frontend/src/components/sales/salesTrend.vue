@@ -5,11 +5,12 @@
       <el-breadcrumb separator="/">
         <el-breadcrumb-item :to="{ path: '/' }"><b>首页</b></el-breadcrumb-item>
         <el-breadcrumb-item>销量分析</el-breadcrumb-item>
+        <el-breadcrumb-item>趋势分析</el-breadcrumb-item>
       </el-breadcrumb>
     </el-col>
   </el-row>
 
-  <el-row :gutter="20">
+  <el-row :gutter="20" class="card-self">
   <el-col :span="12">
     <div class="grid-content bg-purple">
       <div class="chart-container">
@@ -34,7 +35,7 @@
   </el-col>
   </el-row>
 
-  <el-row :gutter="20">
+  <el-row :gutter="20" class="card-self">
   <el-col :span="24">
     <div class="grid-content bg-purple">
       <div class="chart-container">
@@ -470,12 +471,10 @@
 </script>
 
 <style>
-  .el-row {
-    margin-bottom: 20px;
+  .card-self {
+    margin-top: 20px;
   }
-  .el-col {
-    border-radius: 4px;
-  }
+  
   .bg-purple {
     background: #d3dce6;
   }

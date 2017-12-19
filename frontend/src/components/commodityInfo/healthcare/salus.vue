@@ -15,7 +15,7 @@
     <el-col :span="24" class="warp-main" v-if = "!showAttributes" >
 
       <!--列表-->
-      <el-table :data="data" height="350" border style="width: 100%" ref="singleTable"
+      <el-table :data="data" height="200" border style="width: 100%" ref="singleTable"
       @row-click="handleRowClick">
         <el-table-column type="index" width="60"></el-table-column>
         <el-table-column prop="productID" label="商品ID" width="90"></el-table-column>
@@ -72,7 +72,7 @@
     </el-col>
   </el-row>
 
-  <el-row class="warp">
+  <el-row class="warp-chart">
     <el-col>
       <div class="chart-container">
       <div id = "salusInfo" style="width: 100%; height: 500px;"> </div>
@@ -258,6 +258,9 @@ import axios from 'axios'
 </script>
 
 <style scoped>
+    .warp-chart {
+        margin-top: 30px;
+    }
     .handle-select{
         width: 120px;
     }

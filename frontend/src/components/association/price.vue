@@ -11,27 +11,27 @@
     <el-col :span="24" class="chart-classfily">
       <el-tabs type="border-card" >
         <el-tab-pane label="爱他美">
-          <div id="aptamil" style="width:1100px; height:550px;"></div>          
+          <div id="aptamil" style="width:1200%; height:550px;"></div>          
           <el-button id="aptamilExport" type="text" size="medium" style="float: center">添加到简报</el-button>
         </el-tab-pane>
         <el-tab-pane label="喜宝">
-          <div id="hipp" style="width:1100px; height:550px;"></div>
+          <div id="hipp" style="width:1200%; height:550px;"></div>
           <el-button id="hippExport" type="text" size="medium" style="float: center">添加到简报</el-button>
         </el-tab-pane>
         <el-tab-pane label="博朗">
-          <div id="braun" style="width:1100px; height:550px;"></div>
+          <div id="braun" style="width:1200%; height:550px;"></div>
           <el-button id="braunExport" type="text" size="medium" style="float: center">添加到简报</el-button>
         </el-tab-pane>
         <el-tab-pane label="芭乐雅">
-          <div id="balea" style="width:1100px; height:550px;"></div>
+          <div id="balea" style="width:1200%; height:550px;"></div>
           <el-button id="baleaExport" type="text" size="medium" style="float: center">添加到简报</el-button>
         </el-tab-pane>
         <el-tab-pane label="facelle">
-          <div id="facelle" style="width:1100px; height:550px;"></div>
+          <div id="facelle" style="width:1200%; height:550px;"></div>
           <el-button id="facelleExport" type="text" size="medium" style="float: center">添加到简报</el-button>
         </el-tab-pane>
         <el-tab-pane label="拉杜蓝乔">
-          <div id="LaTourangelle" style="width:1100px; height:550px;"></div>
+          <div id="LaTourangelle" style="width:1200%; height:550px;"></div>
           <el-button id="LaTourangelleExport" type="text" size="medium" style="float: center">添加到简报</el-button>
         </el-tab-pane>
       </el-tabs>

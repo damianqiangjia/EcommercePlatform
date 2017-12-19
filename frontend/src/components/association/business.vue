@@ -11,11 +11,11 @@
     <el-col :span="24" class="chart-classfily">
       <el-tabs type="border-card" >
         <el-tab-pane label="商品-电商关联分析" class="chart-card">
-          <div id="chartProduct" style="width:1100px; height:550px;"></div>      
+          <div id="chartProduct" style="width:1200%; height:550px;"></div>      
           <el-button id = "chartProductExport" type="text" size="medium" style="float: center">添加到简报</el-button>
         </el-tab-pane>
         <el-tab-pane label="电商-商品关联分析" class="chart-card">
-          <div id="chartBusiness" style="width:1100px; height:550px;"></div>        
+          <div id="chartBusiness" style="width:1200%; height:550px;"></div>        
           <el-button  id = "chartBusinessExport" type="text" size="medium" style="float: center">添加到简报</el-button>
         </el-tab-pane>
       </el-tabs>

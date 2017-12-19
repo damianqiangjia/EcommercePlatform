@@ -65,16 +65,17 @@
          </div> 
       </el-card>
     </el-col>
+
   </el-row>
 
-<el-row class="warp">
+  <el-row class="warp-chart">
     <el-col>
       <div class="chart-container">
-      <div id = "penatenInfo" style="width: 100%; height: 500px;"> </div>
-      <el-button id="penatenInfoExport" type="text" size="medium" style="float: center">添加到简报</el-button>
+        <div id = "penatenInfo" style="width: 100%; height: 500px;"></div>
+        <el-button id="penatenInfoExport" type="text" size="medium" style="float: center">添加到简报</el-button>
       </div>
     </el-col>
-</el-row>
+  </el-row>
 </div>
 </template>
 
@@ -85,8 +86,8 @@ import axios from 'axios'
   export default {
 
     mounted(){
-        this.getData();
-        this.draw();
+      this.getData();
+      this.draw();
     },
     e1:"attributes",
     data() {
@@ -101,158 +102,156 @@ import axios from 'axios'
       }
     },
     
-     computed: {
+    computed: {
        data(){
         const self = this;
         return self.tableData.filter(function(d){
-        let is_del = false;
-          for (let i = 0; i < self.del_list.length; i++) {
-            if(d.productname === self.del_list[i].productname){
-              is_del = true;
-              break;
+          let is_del = false;
+            for (let i = 0; i < self.del_list.length; i++) {
+              if(d.productname === self.del_list[i].productname){
+                is_del = true;
+                break;
+              }
             }
-          }
-          if(!is_del){
-            if(d.brand.indexOf(self.select_cate) > -1 && 
-              (d.productname.indexOf(self.select_word) > -1 ||
-              d.addr.indexOf(self.select_word) > -1 ||
-              d.brand.indexOf(self.select_word) )
-            ){
-            return d;
-          }
-        }
-      })
-    }
-  },
+            if(!is_del){
+              if(d.brand.indexOf(self.select_cate) > -1 && 
+                (d.productname.indexOf(self.select_word) > -1 ||
+                d.addr.indexOf(self.select_word) > -1 ||
+                d.brand.indexOf(self.select_word) )
+              ){
+              return d;
+              }
+            }
+        })
+      }
+    },
     methods: {
-      draw(){
-        let _this = this;
-        this.penatenInfo = echarts.init(document.getElementById('penatenInfo'));
-        // 绘制图表
-        this.penatenInfo.setOption({
-          title : {
-            text: '贝娜婷 在淘宝平台销量变化及预测',
-            left:'center'
-          },
-          grid:{
-            x:50,
-            y:50,
-            x2:30,
-            y2:30,
-            borderWidth:1
-          },
-          tooltip : {
-            trigger: 'axis'
-          },
-          toolbox: {
-            show : true,
-            feature : {
-              mark : {show: true},
-            }
-          },
-          calculable : true,
-          xAxis : [
-          {
-            type : 'category',
-            boundaryGap : false,
-            data : ['20170511','20170512','20170513','20170514','20170515','20170516','20170517','20170518',
-               '20170519','20170520','20170521','20170522','20170523','20170524','20170525','20170526',
-               '20170527','20170528','20170529','20170530','20170531','20170601','20170602','20170603',
-               '20170604','20170605','20170606','20170607','20170608','20170609','20170610','20170611',
-               '20170612','20170613','20170614','20170615','20170616','20170617','20170618','20170619',
-               '20170620','20170621','20170622', '20170623', '20170624']
-          }
-          ],
-          yAxis : [
-          {
-            type : 'value',
-          }
-          ],
-          visualMap: {
-            show: false,
-            dimension: 0,
-            pieces: [{
+        draw(){
+          let _this = this;
+          this.penatenInfo = echarts.init(document.getElementById('penatenInfo'));
+          // 绘制图表
+          this.penatenInfo.setOption({
+            title : {
+              text: '贝娜婷 在淘宝平台销量变化及预测',
+              left:'center'
+            },
+            grid:{
+              x:50,
+              y:50,
+              x2:30,
+              y2:30,
+              borderWidth:1
+            },
+            tooltip : {
+              trigger: 'axis'
+            },
+            toolbox: {
+              show : true,
+              feature : {
+                mark : {show: true},
+              }
+            },
+            calculable : true,
+            xAxis : [
+              {
+                type : 'category',
+                boundaryGap : false,
+                data : ['20170511','20170512','20170513','20170514','20170515','20170516','20170517','20170518',
+                  '20170519','20170520','20170521','20170522','20170523','20170524','20170525','20170526',
+                  '20170527','20170528','20170529','20170530','20170531','20170601','20170602','20170603',
+                  '20170604','20170605','20170606','20170607','20170608','20170609','20170610','20170611',
+                  '20170612','20170613','20170614','20170615','20170616','20170617','20170618','20170619',
+                  '20170620','20170621','20170622', '20170623', '20170624']
+              }
+            ],
+            yAxis : [
+              {
+                type : 'value',
+              }
+            ],
+            visualMap: {
+              show: false,
+              dimension: 0,
+              pieces: [{
                 lte: 42,
                 color: 'green'
-            }, {
-              gt: 42,
-              lte: 46,
-              color: 'red'
-            }]
-          },
-          series : [
-          {
-            name:'销量变化',
-            type:'line',
-            data:[4,3,4,4,4,4,4,4,4,4,4,4,4,4,3,3,3,4,4,4,4,4,4,3,4,3,
-            3,3,3,3,3,3,2,2,3,3,3,3,2,3,3,3,3,4,4],
-            markPoint : {
-                data : [
+              }, {
+                gt: 42,
+                lte: 46,
+                color: 'red'
+              }]
+            },
+            series : [
+              {
+                name:'销量变化',
+                type:'line',
+                data:[4,3,4,4,4,4,4,4,4,4,4,4,4,4,3,3,3,4,4,4,4,4,4,3,4,3,
+                3,3,3,3,3,3,2,2,3,3,3,3,2,3,3,3,3,4,4],
+                markPoint : {
+                  data : [
                     {type : 'max', name: '最大值'},
                     {type : 'min', name: '最小值'}
-                ]
-            },
-            markLine : {
-                data : [
+                  ]
+                },
+                markLine : {
+                  data : [
                     {type : 'average', name: '平均值'}
-                ]
-            }
+                  ]
+                }
+              }
+            ]
+          })
+
+          //添加至简报
+          var exportIf = document.getElementById('penatenInfoExport')
+          exportIf.onclick = function(){
+            var imgURL = _this.penatenInfo.getDataURL()
+            console.log(imgURL)
+            localStorage.setItem("penatenInfo",imgURL)
+            localStorage.setItem("penatenInfoName","贝娜婷 在淘宝平台销量变化及预测报表")
+            alert("已经添加至简报，后续操作请至简报管理页面编辑")
           }
-          ]
-        })
-
-        //添加至简报
-            var exportIf = document.getElementById('penatenInfoExport')
-            exportIf.onclick = function(){
-                var imgURL = _this.penatenInfo.getDataURL()
-                console.log(imgURL)
-                localStorage.setItem("penatenInfo",imgURL)
-                localStorage.setItem("penatenInfoName","贝娜婷 在淘宝平台销量变化及预测报表")
-
-                alert("已经添加至简报，后续操作请至简报管理页面编辑")
-            }
-      },
-            getData(){
-                axios.get('/getbabyProduct').then((res) => { 
-                  console.log(res) 
-                  let res1 = res.data.babyProduct
-                  var arr=res1.list.filter(function(ele){
-                    return ele.brand.includes("Penaten/贝娜婷")
-                  })
-                  console.log(arr)
-                this.tableData = arr
-                  
-                })
-            },
-            handleRowClick(val){
-              console.log(val.productID)
-              this.showAttributes = true
-              axios.get('/getBabyProductAttributes').then((res) => { 
-                console.log(res) 
-                let res1 = res.data.babyPA
-                var arr=res1.list.filter(function(ele){
-                return ele.productID.includes(val.productID)
-              })
-              console.log(arr)
-              this.attributes = arr
-              })
-            },
-            handleReturn(){
-              this.showAttributes = false
-            },
-            search(){
-                this.is_search = true;
-            },
-            filterTag(value, row) {
-                return row.tag === value;
-            }
+        },
+        getData(){
+          axios.get('/getbabyProduct').then((res) => { 
+            console.log(res) 
+            let res1 = res.data.babyProduct
+            var arr=res1.list.filter(function(ele){
+              return ele.brand.includes("Penaten/贝娜婷")
+            })
+            console.log(arr)
+            this.tableData = arr
+          })
+        },
+        handleRowClick(val){
+          console.log(val.productID)
+          this.showAttributes = true
+          axios.get('/getBabyProductAttributes').then((res) => { 
+            console.log(res) 
+            let res1 = res.data.babyPA
+            var arr=res1.list.filter(function(ele){
+              return ele.productID.includes(val.productID)
+            })
+            console.log(arr)
+            this.attributes = arr
+          })
+        },
+        handleReturn(){
+          this.showAttributes = false
+        },
+        search(){
+          this.is_search = true;
+        },
+        filterTag(value, row) {
+          return row.tag === value;
         }
-  }
+      }
+    }
 </script>
 
 <style scoped>
-    .el-row {
-    margin-bottom: 60px;
+    .warp-chart{
+      margin-top: 30px;
     }
     .handle-select{
         width: 120px;

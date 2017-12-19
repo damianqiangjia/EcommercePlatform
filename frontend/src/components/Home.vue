@@ -3,10 +3,10 @@
     <!--头部-->
     <el-col :span="24" class="topbar-wrap">
       <div class="topbar-logo topbar-btn">
-        <a href="/"><img src="../assets/logo.png" style="padding-left:8px;"></a>
+        <a href="/"><img src="../assets/images/logo.png" style="padding-left:8px;"></a>
       </div>
       <div class="topbar-logos" v-show="!collapsed">
-        <a href="/"><img src="../assets/logotxt.png"></a>
+        <a href="/"><img src="../assets/images/logotxt.png"></a>
       </div>
       <div class="topbar-title">
         <span style="font-size: 16px;color: #fff;">跨境电商平台决策辅助分析系统</span>
@@ -160,7 +160,8 @@
   }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
- <style scoped lang="scss">
+
+<style scoped lang="scss">
   .container {
     position: absolute;  //绝对定位
     top: 0px;

@@ -4,11 +4,12 @@
       <el-col :span="24" class="warp-breadcrum">
         <el-breadcrumb separator="/">
           <el-breadcrumb-item :to="{ path: '/' }"><b>首页</b></el-breadcrumb-item>
+          <el-breadcrumb-item>销量分析</el-breadcrumb-item>
           <el-breadcrumb-item>短期预测</el-breadcrumb-item>
         </el-breadcrumb>
       </el-col>
     </el-row>
-    <el-row :gutter="20">
+    <el-row :gutter="20" class="card-self">
       <el-col :span="24">
         <div class="grid-content bg-purple">
           <div class="chart-container">
@@ -16,12 +17,12 @@
                 <el-button id="forecastExport" size="medium" type="success">导出简报</el-button>
                 <el-button size="medium" type="primary"  v-on:click="export2ExcelOrder">导出excel</el-button>
             </div>
-            <div id = "order" style="width: 1800px; height: 800px;"> </div>
+            <div id = "order" class="orderChart"> </div>
           </div>
         </div>
       </el-col>
     </el-row>
-    <el-row :gutter="20">
+    <el-row :gutter="20" class="card-self">
       <el-col :span="24">
         <div class="grid-content bg-purple">
           <el-tabs v-model="activeName" type="card">
@@ -31,7 +32,7 @@
                     <el-button id="milkForecast" ize="medium" type="success">导出简报</el-button>
                     <el-button size="medium" type="primary"  v-on:click="export2ExcelNaifen">导出excel</el-button>
                 </div>
-                <div id = "naifen" style="width: 1800px; height: 800px;"> </div>
+              <div id = "naifen" class="orderChart"> </div>
               </div>
             </el-tab-pane>
             <el-tab-pane label="母婴用品" name="second">
@@ -40,7 +41,7 @@
                     <el-button id="babyProductForecast" size="medium" type="success">导出简报</el-button>
                     <el-button size="medium" type="primary"  v-on:click="export2ExcelMuying">导出excel</el-button>
                 </div>
-                <div id = "muyingyongpin" style="width: 1800px; height: 800px;"> </div>
+                <div id = "muyingyongpin" class="orderChart"> </div>
               </div>
             </el-tab-pane>
             <el-tab-pane label="护肤品" name="third">
@@ -49,7 +50,7 @@
                     <el-button id="skinForecast" size="medium" type="success">导出简报</el-button>
                     <el-button size="medium" type="primary"  v-on:click="export2ExcelHufu">导出excel</el-button>
                 </div>
-                <div id = "hufupin" style="width: 1800px; height: 800px;"> </div>
+                <div id = "hufupin" class="orderChart"> </div>
               </div>
             </el-tab-pane>
             <el-tab-pane label="食品" name="fourth">
@@ -58,7 +59,7 @@
                     <el-button id="foodForecast" size="medium" type="success">导出简报</el-button>
                     <el-button size="medium" type="primary"  v-on:click="export2ExcelShipin">导出excel</el-button>
                 </div>
-                <div id = "shipin" style="width: 1800px; height: 800px;"> </div>
+                <div id = "shipin" class="orderChart"> </div>
               </div>
             </el-tab-pane>
             <el-tab-pane label="日常用品" name="fifth">
@@ -67,7 +68,7 @@
                     <el-button id="dailyForecast" size="medium" type="success">导出简报</el-button>
                     <el-button size="medium" type="primary"  v-on:click="export2ExcelRichang">导出excel</el-button>
                 </div>
-                <div id = "richangyongpin" style="width: 1800px; height: 800px;"> </div>
+                <div id = "richangyongpin" class="orderChart"> </div>
               </div>
             </el-tab-pane>
             <el-tab-pane label="保健品" name="sixth">
@@ -76,7 +77,7 @@
                     <el-button id="healthForecast" size="medium" type="success">导出简报</el-button>
                     <el-button size="medium" type="primary"  v-on:click="export2ExcelBaojian">导出excel</el-button>
                 </div>
-                <div id = "baojianpin" style="width: 1800px; height: 800px;"> </div>
+                <div id = "baojianpin" class="orderChart"> </div>
               </div>
             </el-tab-pane>
           </el-tabs>
@@ -908,18 +909,22 @@ export2ExcelBaojian() {
 </script>
 
 <style>
-  .bg-purple {
-    background: #d3dce6;
+    .card-self {
+        margin-top: 20px;
+    }
+    .orderChart{
+      width: 100%;
+      height: 500px;
   }
-  .grid-content {
-    border-radius: 4px;
-    min-height: 500px;
-    width: 100%
-  }
-  .chart-container {
-    width: 100%;
-  }
-  .chart-container .el-col {
-    padding: 30px 20px;
-  }
+    .bg-purple {
+        background: #d3dce6;
+    }
+    .grid-content {
+        border-radius: 4px;
+        min-height: 500px;
+        width: 100%
+    }
+    .chart-container {
+        width: 100%;
+    }
 </style>

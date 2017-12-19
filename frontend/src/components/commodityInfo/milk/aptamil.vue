@@ -73,7 +73,7 @@
       </el-card>
     </el-col>
   </el-row>
-<el-row class="warp">
+<el-row class="warp-chart">
         <el-col>
           <div class="chart-container">
           <div id = "aptamilInfo" style="width: 100%; height: 500px;"> </div>
@@ -260,6 +260,9 @@ import axios from 'axios'
 </script>
 
 <style scoped>
+    .warp-chart {
+        margin-top: 30px;
+    }
     .handle-select{
         width: 120px;
     }
