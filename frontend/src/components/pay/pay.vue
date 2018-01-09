@@ -341,6 +341,7 @@
             }  
             const data = this.formatJson(filterVal, list);
 　　　　     export_json_to_excel(tHeader, data, '购买地区分析');
+            alert("成功导出报表")
            })
            })
 },
