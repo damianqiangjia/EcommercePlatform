@@ -38,14 +38,7 @@
                 <div id="chartChina" style="width:1100px; height:400px;"></div>      
                 <el-button id="chartChinaExport" type="text" size="medium" style="float: center">添加到简报</el-button>
               </el-tab-pane>
-              <!-- <el-tab-pane label="销量" class="chart-card">
-                <div id="chartCountry" style="width:1100px; height:500px;"></div>        
-                <el-button type="text" size="medium" style="float: center">添加到简报</el-button>
-              </el-tab-pane>
-              <el-tab-pane label="品牌">
-                <div id="chartBrands" style="width:1100px; height:500px;"></div>
-                <el-button type="text" size="medium" style="float: center">添加到简报</el-button>
-              </el-tab-pane> -->
+
             </el-tabs>
           </el-col>
 
@@ -57,12 +50,12 @@
 </template>
 
 <style>
-  .chart-container {
+  /* .chart-container {
     width: 100%;
   }
   .chart-container .el-col {
     padding: 30px 20px;
-  }
+  } */
 </style>
 
 <script>

@@ -72,8 +72,9 @@
           })
 
           var text = document.createElement("textarea")
-          text.setAttribute("cols","200")
+          text.setAttribute("cols","180")
           text.setAttribute("rows","8")
+          text.setAttribute("class","textarea")
           text.setAttribute("placeholder","请输入您需要的备注信息")
           var returnButton = document.createElement("button")
           var clearButton = document.createElement("button")
@@ -1219,8 +1220,14 @@
     font-size: 20px
   }
   .image {
-    width: 130%;
+    width: 160%;
     display: block;
+    padding: 20px;
+    margin-left: 18%;
+  }
+  .textarea {
+    padding: 20px;
+    margin-left: 5%
   }
 </style>
 

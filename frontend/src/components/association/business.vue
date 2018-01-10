@@ -507,16 +507,17 @@
 </script>
 
 <style>
-  .chart-container {
+  .chart-chart-classfily {
     width: 100%;
-  }
-  .chart-container .el-col {
-    padding: 15px 15px;
+    margin: 20px auto;
+    padding: 50px;
+    border-width: 10px;
+
   }
   .excursus {
-    padding: 10px 10px
-  } 
-  /* .brand-table {
-    padding: 15px 120px
-  } */
+    /* padding: 10px;
+    margin: 20px auto;
+    padding: 50px;
+    border-width: 10px */
+  }
 </style>
