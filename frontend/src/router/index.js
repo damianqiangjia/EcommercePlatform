@@ -16,7 +16,7 @@ import Penaten from '@/components/commodityInfo/babyProduct/penaten'
 import Squitofree from '@/components/commodityInfo/babyProduct/squitofree'
 import Braun from '@/components/commodityInfo/babyProduct/braun'
 
-import Aptamil from '@/components/commodityInfo/milk/Aptamil'
+import Aptamil from '@/components/commodityInfo/milk/aptamil'
 
 import BabybioFood from '@/components/commodityInfo/food/babybioFood'
 
@@ -375,22 +375,21 @@ let router = new Router({
             menuShow: true,
             iconCls: 'iconfont icon-setting',
             children: [{
-                    routerID: '8-1',
-                    path: '/user',
-                    component: subView,
-                    name: '信息',
-                    menuShow: true,
-                    iconCls: 'iconfont icon-tree', // 图标样式class
-                    leaf: true, // 只有一个节点
-                    children: [{
-                        routerID: '8-1-1',
-                        path: '/user/profile',
-                        component: UserProfile,
-                        name: '个人信息',
-                        menuShow: true
-                    }, ]
-                }
-            ]
+                routerID: '8-1',
+                path: '/user',
+                component: subView,
+                name: '信息',
+                menuShow: true,
+                iconCls: 'iconfont icon-tree', // 图标样式class
+                leaf: true, // 只有一个节点
+                children: [{
+                    routerID: '8-1-1',
+                    path: '/user/profile',
+                    component: UserProfile,
+                    name: '个人信息',
+                    menuShow: true
+                }, ]
+            }]
         }
     ]
 })
